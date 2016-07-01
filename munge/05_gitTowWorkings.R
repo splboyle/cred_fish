@@ -182,8 +182,8 @@ tfd[tfd$SIZE_<SIZE_CUT_OFF, c("BIOGM2", "ABUNM2")]<-0
 #tfd[tfd$FAMILY=="Sphyraenidae",]$ABUNM2<-0
 
 #use these as generic dtaa and pooling levels
-tfd$DATA_COL<-tfd$BIOGM2
-tfd$GROUPING<-tfd$SPECIES
+tfd$DATA_COL<-tfd$ABUNM2
+tfd$GROUPING<-tfd$FAMILY
 
 xx<-aggregate(tfd$DATA_COL, by=tfd[,c("DIVEID", "REGION", "ISLAND", "OBS_YEAR", "REEF_ZONE", "GROUPING")], sum, na.rm=TRUE)
 dimnames(xx)[[2]]<-c("DIVEID", "REGION", "ISLAND", "YEAR", "STRATA", "GROUPING", "DATA_COL")
@@ -193,6 +193,11 @@ data.cols<-levels(tfd$GROUPING)
 wtd$TotFish<-rowSums(wtd[,data.cols])  
 
 length(unique(wtd$DIVEID))
+
+tld<-merge(wtd, dive.info, by="DIVEID")
+
+write.csv(tld, file="data/TMP FishTow_Mean_family_tow_level_ABUND.csv")
+
 
 #aggregate - average per island/strata/year
 tfi.mean<-aggregate(wtd[,c("TotFish", data.cols)],by=wtd[,c("REGION", "ISLAND", "STRATA", "YEAR")], mean, na.rm=TRUE)
@@ -204,8 +209,8 @@ tfi.se[,c("TotFish", data.cols)]<-sqrt(tfi.var[,c("TotFish", data.cols)])/sqrt(t
 # add the N to the mean and se dfs before writing them
 tfi.mean$n<-tfi.se$n<-tfi.n$x
 
-write.csv(tfi.mean, file="data/TMP FishTow_Mean.csv")
-write.csv(tfi.se, file="data/TMP FishTow_SE.csv")
+write.csv(tfi.mean, file="data/TMP FishTow_Mean_family_island_year_ABUND.csv")
+write.csv(tfi.se, file="data/TMP FishTow_SE_family_island_year_ABUND.csv")
 
 
 ###################################################################

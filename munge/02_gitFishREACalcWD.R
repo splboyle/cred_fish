@@ -57,18 +57,19 @@ FISH_SPECIES_FIELDS<-c("SPECIES","TAXONNAME", "FAMILY", "COMMONFAMILYALL", "TROP
 species_table<-Aggregate_InputTable(wd, FISH_SPECIES_FIELDS)
 save(species_table, file="data/TMPspecies.Rdata")
 
+#### removing sharks and jacks altogether
+
+test<-subset(wd, !wd$COMMONFAMILYALL %in% c("Jack", "Nurse", "Requiem", "Hammerhead",
+"Turtle", "Dolphin", "UNKNOWN", "Monk Seal", "Tuna", "UNKNOWN", "", "Unspecified Fish"))
+test<-droplevels(test)
+wd<-test
+
 # GENERATE SUMMARY METRICS --------------------------------------------------
 r1<-Calc_Site_Bio(wd, "TROPHIC_MONREP"); trophic.cols<-names(r1[3:dim(r1)[2]])
 r2<-Calc_Site_Bio(wd, "COMMONFAMILYALL"); family.cols<-names(r2[3:dim(r2)[2]])
 r2<-r2[, c("SITEVISITID", "METHOD","Parrotfish")]; family.cols<-c("Parrotfish")
 r2a<-Calc_Site_Abund(wd, "SPECIES"); species.cols<-levels(species_table$SPECIES)
 r2b<-Calc_Site_Bio(wd, "SPECIES"); species.cols<-levels(species_table$SPECIES)
-
-
-## remove the non-fish obs!!
-drops<-c("DOLP", "TURT", "TUNA", "MONK")
-r2a<-r2a[ , !(names(r2a) %in% drops)]
-r2b<-r2b[ , !(names(r2b) %in% drops)]
 
  
 names(r2a)<-ifelse(names(r2a) %in% species.cols,
@@ -109,7 +110,7 @@ wsd<-droplevels(wsd)
 
 
 ## merge with the island level wave exposure data
-waves<-read.csv("data/waves_")
+waves<-read.csv("data/fish_waves_26_5_16.csv")
 tmp<-merge(wsd, waves, all.x=T, by="SITEVISITID")
 
 tmp$SITE<-tmp$SITE.x
