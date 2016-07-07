@@ -1,4 +1,5 @@
 # Species Accumulation Script
+# 7.6.2016 SB
 
 library(vegan)
 library(reshape)
