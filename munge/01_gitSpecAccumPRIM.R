@@ -14,24 +14,36 @@ uIsl <- unique(island_matrix$ISLAND)
 
 # Transform to presence absence matrix
 islands_pa <- ifelse(matrix.onlysp>0, 1, 0)
-matrix <- cbind(islands_pa, site.info)
+matrix <- cbind(site.info, islands_pa)
 
-# Species accumulation 
+# Subset by island 
+Pal <- subset(matrix, ISLAND == "Palmyra")[,3:ncol(Pal)]
+Kin <- subset(matrix, ISLAND == "Kingman")[,3:ncol(Pal)]
+Jar <- subset(matrix, ISLAND == "Jarvis")[,3:ncol(Pal)]
+Joh <- subset(matrix, ISLAND == "Johnston")[,3:ncol(Pal)]
+Bak <- subset(matrix, ISLAND == "Baker")[,3:ncol(Pal)]
+How <- subset(matrix, ISLAND == "Howland")[,3:ncol(Pal)]
+Wak <- subset(matrix, ISLAND == "Wake")[,3:ncol(Pal)]
 
+# Species accumulation
+Pal.sp <- specaccum(Pal, method = "random")
+Kin.sp <- specaccum(Kin, method = "random")
+Jar.sp <- specaccum(Jar, method = "random")
+Joh.sp <- specaccum(Joh, method = "random")
+Bak.sp <- specaccum(Bak, method = "random")
+How.sp <- specaccum(How, method = "random")
+Wak.sp <- specaccum(Wak, method = "random")
 
-#subsetting each region to create a species accum. curve
-## remember to identify only the columns that are being assessed in the 
-# example file, the species starts at column 3 and I'm telling it to go to the end
-# of the dataframe columns
+# Plot curves
+plot(Pal.sp, col = "purple", xlim=c(0,200), main="Randomized Accumulation Curves\nby Island", ylim=c(0,300), ylab="Number of Species",xlab="Number of Sites", lwd=0.1,ci.type='polygon', ci.lty=2,ci=1.96/max(sqrt(Pal.sp$sites)))
+plot(Kin.sp,col="orange", add=TRUE,lwd=0.1,ci.type='polygon',ci.lty=2,ci=1.96/max(sqrt(Kin.sp$sites)))
+plot(Jar.sp,col="green",add=TRUE,lwd=0.1,ci.type='polygon',ci.lty=2,ci=1.96/max(sqrt(Jar.sp$sites)))
+plot(Joh.sp,col="blue",add=TRUE,lwd=0.1,ci.type='polygon',ci.lty=2,ci=1.96/max(sqrt(Joh.sp$sites)))
+plot(Bak.sp,col="yellow",add=TRUE,lwd=0.1,ci.type='polygon',ci.lty=2,ci=1.96/max(sqrt(Bak.sp$sites)))
+plot(How.sp,col="red",add=TRUE,lwd=0.1,ci.type='polygon',ci.lty=2,ci=1.96/max(sqrt(How.sp$sites)))
+plot(Wak.sp,col="cyan",add=TRUE,lwd=0.1,ci.type='polygon',ci.lty=2,ci=1.96/max(sqrt(Wak.sp$sites)))
+legsort=c(1,2,3,4,5,6,7)
+legend(150,150,legend=(uIsl[legsort]),
+       fill = (c("cyan","blue","red","yellow","green","purple", "orange")[legsort]),
+       cex = 0.75)
 
-as=subset(cr,Region=="SAMOA")[,3:ncol(cr)]
-spas=specaccum(as,method=spmethod)
-
-# 
-Pal.sp.random <- specaccum(Pal.mx.prab, method = "random")
-King.sp.random <- specaccum(King.mx, method = "random")
-Jar.sp.random <- specaccum(Jar.mx, method = "random")
-Joh.sp.random <- specaccum(Joh.mx, method = "random")
-Bak.sp.random <- specaccum(Bak.mx, method = "random")
-How.sp.random <- specaccum(How.mx, method = "random")
-Wak.sp.random <- specaccum(Wak.mx, method = "random")
