@@ -1,6 +1,9 @@
 # Species Accumulation Script
 # 7.6.2016 SB
 
+setwd("~/GitHub/cred_fish")
+load("data/TMPwsd.Rdata")
+
 library(vegan)
 library(reshape)
 
@@ -35,7 +38,10 @@ Bak.sp <- specaccum(Bak, method = "random")
 How.sp <- specaccum(How, method = "random")
 Wak.sp <- specaccum(Wak, method = "random")
 
-# Plot curves
+# Plot curves and save
+
+jpeg(file = "graphs_tables/PRIMSpecAccum.jpg")
+
 plot(Pal.sp, col = "purple", xlim=c(0,200), main="Randomized Accumulation Curves\nby Island", ylim=c(0,300), ylab="Number of Species",xlab="Number of Sites", lwd=0.1,ci.type='polygon', ci.lty=2,ci=1.96/max(sqrt(Pal.sp$sites)))
 plot(Kin.sp,col="orange", add=TRUE,lwd=0.1,ci.type='polygon',ci.lty=2,ci=1.96/max(sqrt(Kin.sp$sites)))
 plot(Jar.sp,col="green",add=TRUE,lwd=0.1,ci.type='polygon',ci.lty=2,ci=1.96/max(sqrt(Jar.sp$sites)))
@@ -46,5 +52,8 @@ plot(Wak.sp,col="cyan",add=TRUE,lwd=0.1,ci.type='polygon',ci.lty=2,ci=1.96/max(s
 legsort=c(1,2,3,4,5,6,7)
 legend(150,150,legend=(uIsl[legsort]),
        fill = (c("cyan","blue","red","yellow","green","purple", "orange")[legsort]),
-       cex = 0.75)
+       cex = 0.75) 
+
+dev.off()
+
 
