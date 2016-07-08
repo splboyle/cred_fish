@@ -6,6 +6,7 @@ load("data/TMPwsd.Rdata")
 
 library(vegan)
 library(reshape)
+library(ggplot2)
 
 # Subset species abundance matrix 
 island_matrix <- wsd[c(3,6,37:684,1344)]
@@ -38,9 +39,9 @@ Bak.sp <- specaccum(Bak, method = "random")
 How.sp <- specaccum(How, method = "random")
 Wak.sp <- specaccum(Wak, method = "random")
 
-# Plot curves and save
+## Plot curves showing 95% confidence interval and save
 
-jpeg(file = "graphs_tables/PRIMSpecAccum.jpg")
+jpeg(file = "graphs_tables/PRIMSpecAccum_CI.jpg")
 
 plot(Pal.sp, col = "purple", xlim=c(0,200), main="Randomized Accumulation Curves\nby Island", ylim=c(0,300), ylab="Number of Species",xlab="Number of Sites", lwd=0.1,ci.type='polygon', ci.lty=2,ci=1.96/max(sqrt(Pal.sp$sites)))
 plot(Kin.sp,col="orange", add=TRUE,lwd=0.1,ci.type='polygon',ci.lty=2,ci=1.96/max(sqrt(Kin.sp$sites)))
@@ -55,5 +56,30 @@ legend(150,150,legend=(uIsl[legsort]),
        cex = 0.75) 
 
 dev.off()
+
+## Plot with ggplot showing standard deviation and save
+
+# Create data frames for all the results, including island 
+sp.p <- data.frame(Sites=Pal.sp$sites, Richness=Pal.sp$richness, SD=Pal.sp$sd, ISLAND = "Palmyra")
+sp.k <- data.frame(Sites=Kin.sp$sites, Richness=Kin.sp$richness, SD=Kin.sp$sd, ISLAND = "Kingman")
+sp.j <- data.frame(Sites=Jar.sp$sites, Richness=Jar.sp$richness, SD=Jar.sp$sd, ISLAND = "Jarvis")
+sp.jh <- data.frame(Sites=Joh.sp$sites, Richness=Joh.sp$richness, SD=Joh.sp$sd, ISLAND = "Johnston")
+sp.b <- data.frame(Sites=Bak.sp$sites, Richness=Bak.sp$richness, SD=Bak.sp$sd, ISLAND = "Baker")
+sp.h <- data.frame(Sites=How.sp$sites, Richness=How.sp$richness, SD=How.sp$sd, ISLAND = "Howland")
+sp.w <- data.frame(Sites=Wak.sp$sites, Richness=Wak.sp$richness, SD=Wak.sp$sd, ISLAND = "Wake")
+
+# Merge all data frames 
+sp.all <- rbind(sp.p, sp.k, sp.j, sp.jh, sp.b, sp.h, sp.w)
+
+# Plot all islands showing standard deviation
+ggplot(data = df.all, aes(x = Sites, y = Richness, fill = ISLAND)) +
+  geom_line(aes(fill = ISLAND)) + 
+  geom_ribbon(data = df.all, aes(x = Sites, ymin=(Richness-2*SD),ymax=(Richness+2*SD)),alpha=0.2) + theme_bw() + 
+  ggtitle("Randomized Species Accumulation Curves \n By Island (+/- SD)") + 
+  scale_fill_discrete(name="Island")
+
+# Save plot to folder in GitHub
+ggsave("graphs_tables/PRIMSpecAccum_SD.jpg")
+
 
 
