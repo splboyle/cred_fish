@@ -72,9 +72,9 @@ sp.w <- data.frame(Sites=Wak.sp$sites, Richness=Wak.sp$richness, SD=Wak.sp$sd, I
 sp.all <- rbind(sp.p, sp.k, sp.j, sp.jh, sp.b, sp.h, sp.w)
 
 # Plot all islands showing standard deviation
-ggplot(data = df.all, aes(x = Sites, y = Richness, fill = ISLAND)) +
+ggplot(data = sp.all, aes(x = Sites, y = Richness, fill = ISLAND)) +
   geom_line(aes(fill = ISLAND)) + 
-  geom_ribbon(data = df.all, aes(x = Sites, ymin=(Richness-2*SD),ymax=(Richness+2*SD)),alpha=0.2) + theme_bw() + 
+  geom_ribbon(data = sp.all, aes(x = Sites, ymin=(Richness-2*SD),ymax=(Richness+2*SD)),alpha=0.2) + theme_bw() + 
   ggtitle("Randomized Species Accumulation Curves \n By Island (+/- SD)") + 
   scale_fill_discrete(name="Island")
 
