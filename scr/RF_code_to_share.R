@@ -1,9 +1,9 @@
 ### 
 rm(list=ls())
-setwd("\\\\vmware-host/Shared Folders/Documents/pRojects/IEA_indicators")
-load("data/wsd_indicators_enviro_mains.R") ## MAINS ONLY DATA
+setwd("~/GitHub/cred_fish")
+load("/Users/ShanBam/GitHub/cred_fish/data/TMPwsd.Rdata")
 
-wsd<-wsd_mains
+# wsd<-wsd_mains - unnecessary?
 
 #set.seed(627)
 #########
