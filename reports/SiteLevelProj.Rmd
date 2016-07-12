@@ -1,0 +1,101 @@
+
+---
+title: "Site Level Fish Assemblage Project"
+output: html_document
+---
+
+### What are the main environmental drivers of fish assemblage at the SPC sampling sites across the PRIMNM? 
+
+In identifying what the primary drivers of site-level fish community are across the PRIMNM it may be possible to also identify the environmental thresholds of the communities. For example, at what level of wave energy does the fish assemblage shift from a low wave energy tolerant community to a high wave energy tolerant one. I am also particularly interested in looking at the level of taxonomic overlap across each of these thresholds for each driver. It will also be interesting to identify the number of unique communities for each driver (i.e., is there simply a high wave energy and a low wave energy community or are there more.) Furthermore, how similar are these communities across the islands? 
+
+#### Response Variables
+Biomass (total fish and of each consumer group)  
+Species richness
+Possibly diversity (i.e., Shannon Wiener)  
+Measure of assemblage similarity/dissimilarity (perhaps Jaccard/Sorensen Indices)  
+Perhaps some estimate of size structure, such as mean size of fishes at each site  
+
+#### **Environmental Drivers**  
+#### Site Level Drivers    
+##### Wave Energy
+
+-	I expect higher biomass but lower diversity/species richness at high wave energy sites and lower biomass but higher species richness at low wave energy sites.  
+- However, it is possible that there may not be a significant shift in biomass across wave regimes because of the different relative abundance of groups. Some studies have found higher biomass (very abundant large, heavy fishes; piscivores) in high wave energy sites, whereas other studies have found higher biomass at sheltered sites. Preliminary exploration has shown many non-significant trends between total fish biomass and mean wave energy. However, some have shown negative trends.  
+
+
+##### Depth  
+- Within the SPC sampling sites, I expect there to be a peak in species richness, diversity, biomass, and mean size at the 30m depth limit.  
+- Brokovitch et al. (2008) found a unimodal relationship with depth and observed a peak in diversity, etc. at 30m with a shift in the community deeper than 30m. It will be interesting to see if 30m is deep enough to see a shift in the community (i.e., from more herbivorous fishes in shallower waters to more piscivores and planktivores in deeper waters) or if we will simply see an agglomeration of all groups/species before shifting to deep-water communities. 
+
+
+##### Benthic Complexity  
+-	I expect complexity to be a significant driver of fish community. Generally higher biomass in highly complex habitats? Additionally, higher biomass of lower trophic species with higher complexity. Piscivores probably won’t be governed hugely by this. However, this may depend on the type of habitat (i.e., higher diversity and biomass in encrusting non-Acropora; lowest biomass in massive Acropora communities, etc.). However, it is unlikely we will be able to include the specific benthic communities/domninant coral cover into the analysis so results may be unexpected.  
+-	I expect significant interactions with both depth and wave exposure. Effect of complexity may be stronger under certain wave energy regimes and separately, at certain depths. Linear regression of the site level data showed significant relationships between benthic complexity and both depth and mean wave energy.  
+
+
+##### Coral Cover  
+- Similar to benthic complexity above.  
+
+##### Macroalgae cover  
+-	I expect a significant negative relationship between macroalgal cover and herbivorous fishes. Furthermore, I also expect to see a significant negative interaction between MA cover and both CCA and hard coral cover.  
+
+##### CCA cover  
+-	I expect a positive relationship with herbivorous fish biomass.  
+
+#### Island Level Drivers  
+-	I am also very interested in including a few variables at the island scale such as productivity (i.e., Chl-a or NPP) and temperature if possible. If I do decide to include these variables, I would most likely run the model twice, once with the large scale drivers and once without them. It will be particularly interesting to see the level of interaction between the island level and the site level drivers.   
+
+####  Possible Approach  
+-	Gradient forest 
+
+
+#### Data Exploration  
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+setwd("/Users/ShanBam/GitHub/cred_fish")
+library(ggplot2)
+load("data/TMPwsd.Rdata")
+
+wsd$meanWV <- rowMeans(wsd[,c("X2002", "X2003", "X2004", "X2005", "X2006", "X2007", "X2008", "X2009", "X2010", "X2011", "X2012")], na.rm=TRUE)
+
+ggplot(data = subset(wsd, REEF_ZONE == "Forereef" & meanWV > 0), aes(meanWV, TotFish)) + 
+  geom_point() +
+  geom_smooth(method = "lm", formula=y~x) +
+  facet_wrap(~ISLAND) +
+  scale_y_log10() +
+  labs(title = "Mean Wave Energy (2002-2012) and Total Fish Biomass", x = "Mean Wave Energy (2002-2012)", y = "Total Fish Biomass (g/m2)") + 
+  theme_bw()
+
+ggplot(data = wsd, aes(DEPTH, TotFish)) + 
+  geom_point() +
+  geom_smooth(method = "lm", formula=y~x) +
+  facet_wrap(~ISLAND) +
+  scale_y_log10() +
+  labs(title = "Depth and Total Fish Biomass", x = "Depth (m)", y = "Total Fish Biomass (g/m2)") +
+  theme_bw()
+
+ggplot(data = wsd, aes(SD_SH_DIFF, TotFish)) + 
+  geom_point(na.rm=T) +
+  scale_y_log10() +
+  geom_smooth(method='lm', formula=y~x) +
+  facet_wrap(~ISLAND) +
+  labs(title = "Benthic Complexity (2002-2012) and Total Fish Biomass", x = "Benthic Complexity", y = "Total Fish Biomass (g/m2)") +
+  theme_bw()
+
+ggplot(data = wsd, aes(DEPTH, SD_SH_DIFF)) + 
+  geom_point() +
+  geom_smooth(method = "lm", formula=y~x) + 
+  scale_y_log10() +
+  facet_wrap(~ISLAND) +
+  labs(title = "Relationship between depth and complexity \n across islands (p<0.001)", x = "Depth (m)", y = "Benthic Complexity") +
+  theme_bw()
+
+ggplot(data = subset(wsd, REEF_ZONE == "Forereef" & meanWV > 0), aes(meanWV, SD_SH_DIFF)) + 
+  geom_point() +
+  geom_smooth(method = "lm", formula=y~x) + 
+  scale_y_log10() + 
+  facet_wrap(~ISLAND) +
+  labs(title = "Relationship between mean wave energy and complexity \n across islands (p<0.001)", x = "Mean Wave Energy (2002-2012)", y = "Benthic Complexity") +
+  theme_bw()
+```
+
+
