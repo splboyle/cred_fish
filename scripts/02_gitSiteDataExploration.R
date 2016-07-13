@@ -16,19 +16,54 @@ wsd$meanWV <- rowMeans(wsd[,c("X2002", "X2003", "X2004", "X2005", "X2006", "X200
 wsd$WV_SE <- apply(wsd[1333:1339], 1, st.err)
 wsd$WV_SD <- apply(wsd[1333:1339], 1, sd)
 
+### VERY MESSY - WILL CLEAN UP
+## Struggling with for Loop
+
+# ggsave(pred,filename=paste("TotFish",i,".png",sep="")
 
 preds<-c("meanWV", "SD_SH_DIFF","HARD_CORAL", "MA", "CCA", "DEPTH")
 
-for (i in unique(preds))
-  {
-  #i<-1
+for (i in unique(preds)){
   d <- subset(wsd, REEF_ZONE == "Forereef" & meanWV > 0)
-  p <- ggplot(d, aes(x = preds[i], y = TotFish)) + 
-    geom_point() + 
-    geom_smooth(method="lm", formula=y~x) +
-    facet_wrap(~ISLAND)
-print(p)
+  dd <- (d)(c[16:20,27,1345])
+  print(ggplot(dd, aes(x = i, TotFish)) + 
+    geom_point() +
+    facet_wrap(~ISLAND))
+  }
+# Error: attempt to apply non-function
 
+
+## Doesn't recognize values within predictor columns 
+func <- function(x, na.nm = T){
+  nm <- (x)[c(16:20,27,1345)]
+  for(i in seq_along(nm)){
+    p <- ggplot(wsd)+ 
+      geom_point(aes(x = i, y = TotFish)) + 
+      geom_smooth(method="lm", formula=y~x) +
+      facet_wrap(~ISLAND)
+    print(p)
+  }
 }
 
-ggsave(pred,filename=paste("TotFish",i,".png",sep="")
+func(wsd)
+
+# WORKING-ISH ONE
+for(i in (wsd)[c(16:20,27,1345)]) {
+  p <- ggplot(wsd, aes(x = i, y = TotFish))+ 
+    geom_point(na.rm = T) + 
+    geom_smooth(method="lm", formula=y~x, na.rm = T) +
+    scale_y_log10() +
+    facet_wrap(~ISLAND) +
+    labs(x = i, y = "Total Fish Biomass")
+  print(p)
+}
+# This one still isn't correctly identifying that I want to plot all values within the predictor columns. Here 'i' is seen as the first value within the first variable "meanWV = 114.556...". The graph doesn't look entirely wrong but i is definitely not correctly identified. 
+
+
+## Should look like this plot for all six predictor variables. 
+ggplot(wsd, aes(DEPTH, TotFish)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", formula = y~x) +
+  scale_y_log10() +
+  facet_wrap(~ISLAND)
+
