@@ -48,8 +48,15 @@ func <- function(x, na.nm = T){
 func(wsd)
 
 # WORKING-ISH ONE
-for(i in (wsd)[c(16:20,27,1345)]) {
-  p <- ggplot(wsd, aes(x = i, y = TotFish))+ 
+preds<-c("meanWV", "SD_SH_DIFF","HARD_CORAL", "MA", "CCA", "DEPTH")
+
+
+for(i in unique(preds)){
+  #i<-1
+  d <- subset(wsd, REEF_ZONE == "Forereef" & meanWV > 0)
+  d<-d[,c(preds[i], "TotFish", "ISLAND")]
+  DATA_COL<-names(d)[1]
+  p <- ggplot(wsd, aes_string(x = DATA_COL, y = wsd$TotFish))+ 
     geom_point(na.rm = T) + 
     geom_smooth(method="lm", formula=y~x, na.rm = T) +
     scale_y_log10() +
