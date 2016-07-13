@@ -46,8 +46,44 @@ func <- function(x, na.nm = T){
 }
 
 func(wsd)
+# WORKING TO RUN THROUGH DIFFERENT PREDICTOR TERMS
 
-# WORKING-ISH ONE
+
+### set up variables to be plotted here
+response<-c("TotFish")
+
+response_label<-c("The label you want")
+
+pred.cols<-c("meanWV", "SD_SH_DIFF","HARD_CORAL", "MA", "CCA", "DEPTH")
+
+pred_label<-c("label_1", "label_2", "label_3", "label_4", "label_5", "label_6")
+
+####
+
+for(i in unique(pred.cols)){
+
+##i<-1
+
+d<-wsd[,c(response, pred.cols[i], "ISLAND")]
+
+p <- ggplot(d, aes_string(x = unique(pred.cols)[i], y = response))+ 
+
+    geom_point(na.rm = T) + 
+
+    geom_smooth(method="lm", formula=y~x, na.rm = T) +
+
+    scale_y_log10() +
+
+    facet_wrap(~ISLAND) +
+
+    labs(x = pred_label[i], y = response_label)
+
+  print(p)
+
+} 
+
+
+# WORKING-ISH ONE - we can pick apart the logic of the one below if you want to understand why it doesn't work
 preds<-c("meanWV", "SD_SH_DIFF","HARD_CORAL", "MA", "CCA", "DEPTH")
 
 
