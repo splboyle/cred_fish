@@ -7,7 +7,7 @@ load("data/TMPwsd.Rdata")
 
 library(ggplot2)
 
-#st.err <- function(x, na.rm=FALSE) {
+st.err <- function(x, na.rm=FALSE) {
   if(na.rm==TRUE) x <- na.omit(x)
   sd(x)/sqrt(length(x))
 }
@@ -60,24 +60,18 @@ pred_label<-c("label_1", "label_2", "label_3", "label_4", "label_5", "label_6")
 
 ####
 
-for(i in unique(pred.cols)){
+for(i in 1:length(pred.cols)){
 
 ##i<-1
 
 d<-wsd[,c(response, pred.cols[i], "ISLAND")]
 
 p <- ggplot(d, aes_string(x = unique(pred.cols)[i], y = response))+ 
-
-    geom_point(na.rm = T) + 
-
-    geom_smooth(method="lm", formula=y~x, na.rm = T) +
-
+ 	geom_point(na.rm = T) + 
+	geom_smooth(method="lm", formula=y~x, na.rm = T) +
     scale_y_log10() +
-
     facet_wrap(~ISLAND) +
-
-    labs(x = pred_label[i], y = response_label)
-
+    labs(x = pred_label[i], y = response_label)+ theme_classic()
   print(p)
 
 } 

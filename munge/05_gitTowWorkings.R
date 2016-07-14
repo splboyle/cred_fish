@@ -169,7 +169,7 @@ length(unique(tfd$DIVEID))
 summary(tfd$DEPTH)
 
 #Filter out tows less than 10m OR greater than 20m
-tfd<-subset(tfd, tfd$DEPTH>10 & tfd$DEPTH<20)
+tfd<-subset(tfd, tfd$DEPTH>10 & tfd$DEPTH<20)t
 tfd<-droplevels(tfd)
 length(unique(tfd$DIVEID))
 
