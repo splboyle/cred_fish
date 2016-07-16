@@ -1,0 +1,20 @@
+---
+title: "ReportPlan"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+###SPC Data
+
+####Products
+- Bubble Plots 
+
+
+```{r, echo=FALSE}
+
+```
+
+

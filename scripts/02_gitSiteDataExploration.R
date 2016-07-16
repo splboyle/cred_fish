@@ -19,44 +19,17 @@ wsd$WV_SD <- apply(wsd[1333:1339], 1, sd)
 ### VERY MESSY - WILL CLEAN UP
 ## Struggling with for Loop
 
-# ggsave(pred,filename=paste("TotFish",i,".png",sep="")
-
-preds<-c("meanWV", "SD_SH_DIFF","HARD_CORAL", "MA", "CCA", "DEPTH")
-
-for (i in unique(preds)){
-  d <- subset(wsd, REEF_ZONE == "Forereef" & meanWV > 0)
-  dd <- (d)(c[16:20,27,1345])
-  print(ggplot(dd, aes(x = i, TotFish)) + 
-    geom_point() +
-    facet_wrap(~ISLAND))
-  }
-# Error: attempt to apply non-function
-
-
-## Doesn't recognize values within predictor columns 
-func <- function(x, na.nm = T){
-  nm <- (x)[c(16:20,27,1345)]
-  for(i in seq_along(nm)){
-    p <- ggplot(wsd)+ 
-      geom_point(aes(x = i, y = TotFish)) + 
-      geom_smooth(method="lm", formula=y~x) +
-      facet_wrap(~ISLAND)
-    print(p)
-  }
-}
-
-func(wsd)
 # WORKING TO RUN THROUGH DIFFERENT PREDICTOR TERMS
 
 
 ### set up variables to be plotted here
 response<-c("TotFish")
 
-response_label<-c("The label you want")
+response_label<-c("Total Fish Biomass") # label you want
 
 pred.cols<-c("meanWV", "SD_SH_DIFF","HARD_CORAL", "MA", "CCA", "DEPTH")
 
-pred_label<-c("label_1", "label_2", "label_3", "label_4", "label_5", "label_6")
+pred_label<-c("Mean Wave Energy", "Benthic Complexity", "Coral Cover", "Macroalgal Cover", "CCA Cover", "Depth") # predictor labels 
 
 ####
 
