@@ -46,7 +46,7 @@ cols <- brewer.pal(5,"Dark2") #play around with
 
 ### All islands in the Pacific by large fish biomass, filled in by region 
 ggplot(yrMeanTowBiomass, aes(x = reorder(ISLAND, -TotFish.Mean), y = TotFish.Mean, fill = REGION)) +
-  geom_bar(stat = "identity", size = .3) +
+  geom_bar(stat = "identity", col="black", size = .3) +
   geom_errorbar(aes(ymax = TotFish.Mean + TotFish.SE, ymin=TotFish.Mean - TotFish.SE), width = 0, size = .3) + 
   theme_bw() + 
   theme(axis.title.x = element_blank()) + 
@@ -58,10 +58,11 @@ ggplot(yrMeanTowBiomass, aes(x = reorder(ISLAND, -TotFish.Mean), y = TotFish.Mea
   theme(legend.title=element_blank()) +
   scale_y_continuous(expand = c(0,0), limits = c(0,100)) +
   scale_fill_manual(values = cols)
+ggsave("graphs_tables/AllPacificTow_IslandMeans.png")
 
 ggplot(subset(yrMeanTowBiomass, REGION == "PRIAs"), aes(x = reorder(ISLAND, -TotFish.Mean), y = TotFish.Mean)) +
   geom_bar(stat = "identity", size = .3) +
-  #geom_errorbar(aes(ymax = TotFish.Mean + TotFish.SE, ymin=TotFish.Mean - TotFish.SE), width = 0, size = .3) +
+  geom_errorbar(aes(ymax = TotFish.Mean + TotFish.SE, ymin=TotFish.Mean - TotFish.SE), width = 0, size = .3) +
   theme_bw() + 
   theme(axis.title.x = element_blank()) + 
   xlab("Year") + 
@@ -83,6 +84,40 @@ ggplot(subset(FishTowMeanSE, REGION == "PRIAs"), aes(x =YEAR, y = TotFish)) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   theme(axis.text.x=element_text(angle=50, hjust=1))+
   scale_y_continuous(expand = c(0,0), limits = c(0,100)) +
+  scale_fill_manual(values = cols)
+
+
+
+
+for (i in unique(FishTowMeanSE$ISLAND)){
+  t <- subset(FishTowMeanSE, ISLAND == i)
+  p.t <- ggplot(t, aes(YEAR, TotFish)) + 
+    geom_bar(stat = "identity", col = "black", fill = "springgreen4", size = .25, width = .3) + 
+    geom_errorbar(aes(ymax = TotFish + SE, ymin=TotFish - SE), width = 0, size = .25) + 
+    geom_smooth(method = "lm", se = T) +
+    theme_bw() +
+    theme(axis.title.x = element_blank()) + 
+    ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+    theme(axis.text.x=element_text(angle=50, hjust=1))+
+    #scale_y_continuous(expand = c(0,0), limits = c(0,100)) +
+    scale_fill_manual(values = cols)
+  print(p.t)
+  #ggsave(p,filename=paste("AllFish",i,".png",sep=""), path = "graphs_tables")
+}
+
+
+
+ggplot(subset(FishTowMeanSE, ISLAND == "Wake"), aes(x =YEAR, y = TotFish)) +
+  geom_bar(stat = "identity", size = .5) +
+  geom_errorbar(aes(ymax = TotFish + SE, ymin=TotFish - SE), width = 0, size = .3) +
+  geom_smooth(method = "lm", se = F) +
+  theme_bw() +
+  theme(axis.title.x = element_blank()) + 
+  ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  theme(axis.text.x=element_text(angle=50, hjust=1))+
+  #scale_y_continuous(expand = c(0,0), limits = c(0,100)) +
   scale_fill_manual(values = cols)
 
 

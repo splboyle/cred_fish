@@ -8,6 +8,12 @@ library(vegan)
 library(reshape)
 library(ggplot2)
 
+if (!require("RColorBrewer")) {
+  install.packages("RColorBrewer")
+  library(RColorBrewer)
+}
+display.brewer.all()
+
 # Subset species abundance matrix 
 island_matrix <- wsd[c(3,6,37:684,1344)]
 matrix.onlysp <- island_matrix[-c(1,2,651)]
@@ -22,13 +28,13 @@ islands_pa <- ifelse(matrix.onlysp>0, 1, 0)
 matrix <- cbind(site.info, islands_pa)
 
 # Subset by island 
-Pal <- subset(matrix, ISLAND == "Palmyra")[,3:ncol(Pal)]
-Kin <- subset(matrix, ISLAND == "Kingman")[,3:ncol(Pal)]
-Jar <- subset(matrix, ISLAND == "Jarvis")[,3:ncol(Pal)]
-Joh <- subset(matrix, ISLAND == "Johnston")[,3:ncol(Pal)]
-Bak <- subset(matrix, ISLAND == "Baker")[,3:ncol(Pal)]
-How <- subset(matrix, ISLAND == "Howland")[,3:ncol(Pal)]
-Wak <- subset(matrix, ISLAND == "Wake")[,3:ncol(Pal)]
+Pal <- subset(matrix, ISLAND == "Palmyra")[,3:ncol(matrix)]
+Kin <- subset(matrix, ISLAND == "Kingman")[,3:ncol(matrix)]
+Jar <- subset(matrix, ISLAND == "Jarvis")[,3:ncol(matrix)]
+Joh <- subset(matrix, ISLAND == "Johnston")[,3:ncol(matrix)]
+Bak <- subset(matrix, ISLAND == "Baker")[,3:ncol(matrix)]
+How <- subset(matrix, ISLAND == "Howland")[,3:ncol(matrix)]
+Wak <- subset(matrix, ISLAND == "Wake")[,3:ncol(matrix)]
 
 # Species accumulation
 Pal.sp <- specaccum(Pal, method = "random")
@@ -71,12 +77,20 @@ sp.w <- data.frame(Sites=Wak.sp$sites, Richness=Wak.sp$richness, SD=Wak.sp$sd, I
 # Merge all data frames 
 sp.all <- rbind(sp.p, sp.k, sp.j, sp.jh, sp.b, sp.h, sp.w)
 
-# Plot all islands showing standard deviation
+#colorRampPalette(brewer.pal(4,"Dark2"))(7) #This will generate 4 colours based on the 4 from the ‘Blues’ palette
+#cols = c("#1B9E77", "#7A7E3C", "#D95F02", "#A6675A", "#7570B3", "#AD4C9E", "#E7298A")
+
+# Plot all islands showing standard deviation - colors are hard to read here - need to change them at some point
 ggplot(data = sp.all, aes(x = Sites, y = Richness, fill = ISLAND)) +
   geom_line(aes(fill = ISLAND)) + 
-  geom_ribbon(data = sp.all, aes(x = Sites, ymin=(Richness-2*SD),ymax=(Richness+2*SD)),alpha=0.2) + theme_bw() + 
+  geom_ribbon(data = sp.all, aes(x = Sites, ymin=(Richness-2*SD),ymax=(Richness+2*SD)),alpha=0.2) + 
+  theme_bw() + 
   ggtitle("Randomized Species Accumulation Curves \n By Island (+/- SD)") + 
-  scale_fill_discrete(name="Island")
+  scale_fill_discrete(name="Island") +
+  #theme(legend.position="bottom") +
+  ylab("Species Richness") + 
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+  theme(legend.title=element_blank()) 
 
 # Save plot to folder in GitHub
 ggsave("graphs_tables/PRIMSpecAccum_SD.jpg")
