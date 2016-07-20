@@ -26,7 +26,7 @@ colnames(tot.allisland) <- c("island", "biomass", "SE")
 pisc <- do.call(data.frame, aggregate(PISCIVORE~OBS_YEAR+ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
 colnames(pisc) <- c("year", "island", "biomass", "SE")
 
-plank <- do.call(data.frame, aggregate(NoMABI~OBS_YEAR+ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
+plank <- do.call(data.frame, aggregate(PLANKTIVORE~OBS_YEAR+ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
 colnames(plank) <- c("year", "island", "biomass", "SE")
 
 prim <- do.call(data.frame, aggregate(PRIMARY~OBS_YEAR+ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
@@ -46,7 +46,7 @@ all.groups <- rbind(prim, sec, plank, pisc)
 pisc.allyr <- do.call(data.frame, aggregate(PISCIVORE~ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
 colnames(pisc.allyr) <- c("island", "biomass", "SE")
 
-plank.allyr <- do.call(data.frame, aggregate(NoMABI~ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
+plank.allyr <- do.call(data.frame, aggregate(PLANKTIVORE~ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
 colnames(plank.allyr) <- c("island", "biomass", "SE")
 
 prim.allyr <- do.call(data.frame, aggregate(PRIMARY~ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
@@ -121,12 +121,12 @@ for (i in unique(all.groups$island)) {
 ###############################################
 ### Total fish biomass stacked by consumer group, faceted by island across all years (TS bargraph)
 # Need errorbars
-limits <- aes(ymax = tot$biomass + tot$SE, ymin = tot$biomass - tot$SE)
+selimits <- aes(ymax = allF + allSE, ymin= allF - allSE)
 
-ggplot(all.groups, aes(x = year, y = biomass)) +
-  geom_bar(stat = "identity", position = "stack", col = "black", aes(fill = group), size = .3) +
-  #geom_errorbar(limits, width = 0.25) +
-  facet_grid(~island) +
+ggplot(allgroups, aes(x = year, y = biomass, fill = group)) +
+  geom_bar(stat = "identity", col = "black", size = .3) +
+  geom_errorbar(selimits, width = 0.25) +
+  facet_grid(.~island) +
   theme_bw() + 
   theme(axis.title.x = element_blank()) +
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
@@ -135,16 +135,18 @@ ggplot(all.groups, aes(x = year, y = biomass)) +
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
   theme(legend.position = "bottom") +
   theme(legend.title=element_blank()) 
-  #scale_y_continuous(expand = c(0,0))
+
 ggsave("graphs_tables/StackedConsumerGroup_IslandFacet.png") # must be last plot 
 
 ### How do I add the error bar for the total mean? Its in a different dataframe...
 ### How do I change the stack order of the groups - i.e., I want Planktivores or Piscivores (or Herbivores) on the bottom
 
 ### Total fish biomass (mean of all years combined) for each island stacked by consumer group
-ggplot(tot.allyr, aes(x = island, y = biomass)) +
-  geom_bar(stat = "identity", position = "stack", col = "black", aes(fill = group), size = .3) +
-  #geom_errorbar(limits, width = 0.25) +
+limits <- aes(ymax = allF + allSE, ymin= allF - allSE)
+
+ggplot(totallyr, aes(x = island, y = biomass, fill = group)) +
+  geom_bar(stat = "identity", col = "black", size = .3) +
+  geom_errorbar(limits, width = 0.25) +
   theme_bw() + 
   theme(axis.title.x = element_blank()) +
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
@@ -153,6 +155,7 @@ ggplot(tot.allyr, aes(x = island, y = biomass)) +
   #theme(axis.text.x=element_text(angle=45, hjust=1)) +
   theme(legend.position = "bottom") +
   theme(legend.title=element_blank())
+
 ggsave("graphs_tables/StackedConsumerGroup_IslandMean.png")
 
 ggplot(tot.allisland, aes(x = island, y = biomass)) +
