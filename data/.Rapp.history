@@ -1,4 +1,4 @@
 load("/Users/ShanBam/GitHub/cred_fish/data/TMPwsd.Rdata")
 load("/Users/ShanBam/GitHub/cred_fish/data/TMPspecies.Rdata")
-load("/Users/ShanBam/GitHub/cred_fish/data/TMPspecies.Rdata")
 View(TMPspecies)
+load("/Users/ShanBam/GitHub/cred_fish/data/tmp_RAMP_BASICdata_pooled_island.rdata")

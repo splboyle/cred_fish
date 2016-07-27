@@ -4,6 +4,8 @@
 
 setwd("/Users/ShanBam/GitHub/cred_fish")
 load("data/TMPwsd.Rdata")
+load("data/tmp_RAMP_BASICdata_pooled_island.rdata")
+load("data/tmp_RAMP_BASICdata_pooled_is_yr_RZ.rdata")
 
 library(ggplot2)
 library(plyr)
@@ -14,7 +16,27 @@ st.err <- function(x, na.rm=FALSE) {
   sd(x)/sqrt(length(x))
 }
 
-wsd$NoMABI <- (wsd$PLANKTIVORE - wsd$MABI)
+dp <- as.data.frame(dp)
+if (!require("RColorBrewer")) {
+  install.packages("RColorBrewer")
+  library(RColorBrewer)
+}
+display.brewer.all()
+cols <- brewer.pal(6,"RdYlGn")
+
+ggplot(data = subset(dp, Mean.REEF_ZONE == "Forereef"), aes(x = reorder(Mean.ISLAND, -Mean.TotFish), y = Mean.TotFish, fill = Mean.REGION)) +
+  geom_bar(stat = "identity", col="black", size = .3) +
+  geom_errorbar(aes(ymax = Mean.TotFish + PooledSE.TotFish, ymin=Mean.TotFish - PooledSE.TotFish), width = 0, size = .3) + 
+  theme_bw() + 
+  theme(axis.title.x = element_blank()) + 
+  xlab("Year") + 
+  ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  theme(axis.text.x=element_text(angle=50, hjust=1))+
+  theme(legend.position = "bottom") +
+  theme(legend.title=element_blank()) +
+  scale_fill_manual(values = cols)
+
 
 # Time series means 
 tot <- do.call(data.frame, aggregate(TotFish~OBS_YEAR+ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
@@ -83,7 +105,7 @@ for (i in unique(tot$island)){
 
 ###############################################
 ### Total fish biomass across all years faceted by island (TS bargraph)
-p.facet <- ggplot(tot, aes(x = year, y = biomass, fill = island)) +
+p.facet <- ggplot(dp, aes(x = year, y = biomass, fill = island)) +
   geom_bar(stat = "identity", col = "black", size = .25) +
   geom_errorbar(aes(ymax = biomass + SE, ymin=biomass - SE), width = 0, size = .25) + 
   facet_grid(~island) +
