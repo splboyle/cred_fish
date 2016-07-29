@@ -3,7 +3,7 @@
 # July 18, 2016
 
 setwd("/Users/ShanBam/GitHub/cred_fish")
-TMP.FishTow_Mean_island_year_BIO <- read.csv("data/TMP.FishTow_Mean_family_tow_level_BIO")
+TMP.FishTow_Mean_family_tow_BIO <- read.csv("data/TMP FishTow_Mean_family_tow_level_BIO.csv")
 load("data/TMPspecies.Rdata")
 
 library(ggplot2)
@@ -14,7 +14,7 @@ st.err <- function(x, na.rm=FALSE) {
 }
 
 # Subset PRIA and Scaridae
-PRIA.tow <- subset(TMP.FishTow_Mean_family_tow_level_BIO, REGION.y == "PRIAs")
+PRIA.tow <- subset(TMP.FishTow_Mean_family_tow_BIO, REGION.y == "PRIAs")
 PRIA.tow.parrot <- data.frame(PRIA.tow$X, PRIA.tow$DIVEID, PRIA.tow$ISLAND.x, PRIA.tow$YEAR, PRIA.tow$STRATA, PRIA.tow$Scaridae)
 colnames(PRIA.tow.parrot) <- c("X", "DIVEID", "ISLAND", "YEAR", "STRATA", "Scaridae")
 
@@ -22,16 +22,33 @@ parrot.tow.mean <- do.call(data.frame, aggregate(Scaridae~ISLAND+YEAR, data = su
 colnames(parrot.tow.mean) <- c("island", "year", "biomass", "SE")
 
 ### Parrotfish biomass across years, faceted by island
-ggplot(parrot.tow.mean, aes(year, biomass))+
-  geom_bar(stat = "identity") +
+parrot <- ggplot(subset(parrot.tow.mean, year > 2001), aes(year, biomass, fill = island))+
+  geom_bar(stat = "identity", col = "black", size = .25) +
   geom_errorbar(aes(ymax = biomass+SE, ymin=biomass-SE), width = 0, size = .3)+
   facet_grid(~island) +
   theme_bw() + 
   theme(axis.title.x = element_blank()) +
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
-  ggtitle("PARROTFISH") +
+  ggtitle("Parrotfish Biomass Across the PRIMNM (2002-2015)") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
-  theme(axis.text.x=element_text(angle=45, hjust=1))
+  theme(axis.text.x=element_text(angle=50, hjust=1))+
+  theme(legend.position = "none")
+ggsave("graphs_tables/tow/ParrotfishTow_TS_IslandFacet_lowres.png")
+
+ggplot(subset(parrot.tow.mean, year > 2001 & island == "Wake"), aes(year, biomass))+
+  geom_bar(stat = "identity", col = "black", fill ="#FB61D7", size = 0.25) +
+  geom_errorbar(aes(ymax = biomass+SE, ymin=biomass-SE), width = 0, size = .3)+
+  theme_bw() + 
+  theme(axis.title.x = element_blank()) +
+  ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
+  ggtitle("Parrotfish Biomass at Wake (2002-2015)") +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  theme(axis.text.x=element_text(angle=50, hjust=1))+
+  theme(legend.position = "none")
+ggsave("graphs_tables/tow/ParrotfishTow_TS_Wake_lowres.png")
+
+ggplot_build(parrot)$data
+
 
 ### Parrotfish biomass for Wake across the years (with trendline...)
 ggplot(subset(parrot.tow.mean, island == "Wake"), aes(year, biomass))+

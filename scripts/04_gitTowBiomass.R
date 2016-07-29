@@ -3,10 +3,18 @@
 # July 13, 2016
 
 setwd("/Users/ShanBam/GitHub/cred_fish")
-TMP.FishTow_Mean_island_year_BIO <- read.csv("data/TMP.FishTow_Mean_island_year_BIO")
+TMP.FishTow_Mean_island_year_BIO <- read.csv("data/TMP FishTow_Mean_island_year_BIO.csv")
+TMP.FishTow_SE_island_year_BIO <- read.csv("data/TMP FishTow_SE_island_year_BIO.csv")
+TMPtowData <- read.csv("data/TMPtowData.csv")
 load("data/TMPspecies.Rdata")
 
 library(ggplot2)
+
+# Standard error function used to calculate (not shown here)
+st.err <- function(x, na.rm=FALSE) {
+  if(na.rm==TRUE) x <- na.omit(x)
+  sd(x)/sqrt(length(x))
+}
 
 ### Color Brewer
 if (!require("RColorBrewer")) {
@@ -42,8 +50,7 @@ ggplot(subset(MeanSETowBiomass, REGION == "PRIAs"), aes(x = OBS_YEAR, y = BIOGM2
 ### Mean and SE across years 
 yrMeanTowBiomass <- do.call(data.frame, aggregate(TotFish~REGION+ISLAND, data = TMP.FishTow_Mean_island_year_BIO, FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
 
-cols<- c("MARIAN"="#1B9E77","MHI"="#D95F02", "NWHI"="#7570B3", "PRIAs"="chocolate2", "SAMOA"="#E7298A")
-cols <- brewer.pal(5,"Dark2") #play around with
+
 
 ### All islands in the Pacific by large fish biomass, filled in by region 
 ggplot(yrMeanTowBiomass, aes(x = reorder(ISLAND, -TotFish.Mean), y = TotFish.Mean, fill = REGION)) +
@@ -51,6 +58,7 @@ ggplot(yrMeanTowBiomass, aes(x = reorder(ISLAND, -TotFish.Mean), y = TotFish.Mea
   geom_errorbar(aes(ymax = TotFish.Mean + TotFish.SE, ymin=TotFish.Mean - TotFish.SE), width = 0, size = .3) + 
   theme_bw() + 
   theme(axis.title.x = element_blank()) + 
+  ggtitle("Large Fish (>50cm) Biomass Across All Pacific Islands") +
   xlab("Year") + 
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
@@ -58,7 +66,7 @@ ggplot(yrMeanTowBiomass, aes(x = reorder(ISLAND, -TotFish.Mean), y = TotFish.Mea
   theme(legend.position = "bottom") +
   theme(legend.title=element_blank()) +
   scale_y_continuous(expand = c(0,0), limits = c(0,100)) +
-  scale_fill_manual(values = cols)
+  scale_fill_manual(values=c("#ADDD8E",  "#31A354",  "#78C679", "#980043",  "#006837"))
 ggsave("graphs_tables/tow/AllPacificTow_IslandMeans.png")
 
 ### Large fish biomass, island means, each island 
@@ -76,17 +84,23 @@ ggplot(subset(yrMeanTowBiomass, REGION == "PRIAs"), aes(x = reorder(ISLAND, -Tot
 
 
 ### NOT SURE OF THIS YET - Each year ~ time series, large fish biomass 
-ggplot(subset(FishTowMeanSE, REGION == "PRIAs"), aes(x =YEAR, y = TotFish)) +
-  geom_bar(stat = "identity", size = .5) +
+ggplot(subset(FishTowMeanSE, REGION == "PRIAs" & YEAR > 2001), aes(x =YEAR, y = TotFish, fill = ISLAND)) +
+  geom_bar(stat = "identity", col = "black", size = .25) +
   geom_errorbar(aes(ymax = TotFish + SE, ymin=TotFish - SE), width = 0, size = .3) + 
   facet_grid(~ISLAND) +
   theme_bw() +
+  geom_smooth(method = "lm", formula = y~x) +
+  ggtitle("Large Fish (>50cm) Biomass Across the PRIMNM (2002-2015)") +
   theme(axis.title.x = element_blank()) + 
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   theme(axis.text.x=element_text(angle=50, hjust=1))+
-  scale_y_continuous(expand = c(0,0), limits = c(0,100)) +
-  scale_fill_manual(values = cols)
+  theme(legend.position = "none") + 
+  scale_y_continuous(limits = c(0,100)) 
+ggsave("graphs_tables/tow/FishBioTow_Temporal_IslandFacet_lm.png")
+
+johnston.lm <- lm(TotFish ~ YEAR, data = subset(FishTowMeanSE, ISLAND == "Johnston")) # p < 0.01
+wake.lm <- lm(TotFish ~ YEAR, data = subset(FishTowMeanSE, ISLAND == "Wake"))
 
 ggplot(subset(FishTowMeanSE, ISLAND == "Wake"), aes(x =YEAR, y = TotFish)) +
   geom_bar(stat = "identity", size = .5) +

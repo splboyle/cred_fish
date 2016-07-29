@@ -6,6 +6,9 @@ setwd("/Users/ShanBam/GitHub/cred_fish")
 load("data/TMPwsd.Rdata")
 load("data/tmp_RAMP_BASICdata_pooled_island.rdata")
 load("data/tmp_RAMP_BASICdata_pooled_is_yr_RZ.rdata")
+consgrp_stack <- read.csv("data/working_data/consgrp_stack.csv")
+islandmean <- read.csv("data/working_data/islandmean.csv")
+parrot_sum <- read.csv("data/working_data/dp_parrotfishSUM.csv")
 
 library(ggplot2)
 library(plyr)
@@ -23,66 +26,28 @@ if (!require("RColorBrewer")) {
 }
 display.brewer.all()
 cols <- brewer.pal(6,"RdYlGn")
+colorRampPalette(brewer.pal(6,"YlGn"))(6)
 
+# All fish across all pacific islands 
 ggplot(data = subset(dp, Mean.REEF_ZONE == "Forereef"), aes(x = reorder(Mean.ISLAND, -Mean.TotFish), y = Mean.TotFish, fill = Mean.REGION)) +
   geom_bar(stat = "identity", col="black", size = .3) +
   geom_errorbar(aes(ymax = Mean.TotFish + PooledSE.TotFish, ymin=Mean.TotFish - PooledSE.TotFish), width = 0, size = .3) + 
   theme_bw() + 
   theme(axis.title.x = element_blank()) + 
+  ggtitle("Total Fish Biomass Across All Pacific Islands") +
   xlab("Year") + 
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   theme(axis.text.x=element_text(angle=50, hjust=1))+
   theme(legend.position = "bottom") +
   theme(legend.title=element_blank()) +
-  scale_fill_manual(values = cols)
+  #scale_fill_manual(values=c("#EDF8E9", "#CEECC8", "#ABDDA6", "#81CA82", "#53AD62", "#238B45")) +
+  scale_fill_manual(values=c("#D9F0A3", "#ADDD8E", "#980043" ,  "#78C679", "#31A354", "#006837"))
+  #scale_fill_manual(values=c("#EFF3FF", "#C6DBEF", "#9ECAE1", "#6BAED6", "#3182BD", "#08519C"))
+ggsave(file = "graphs_tables/TotFishSPC_AllIslands.png")
 
 
-# Time series means 
-tot <- do.call(data.frame, aggregate(TotFish~OBS_YEAR+ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
-colnames(tot) <- c("year", "island", "biomass", "SE")
 
-tot.allisland <- do.call(data.frame, aggregate(TotFish~ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
-colnames(tot.allisland) <- c("island", "biomass", "SE")
-
-pisc <- do.call(data.frame, aggregate(PISCIVORE~OBS_YEAR+ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
-colnames(pisc) <- c("year", "island", "biomass", "SE")
-
-plank <- do.call(data.frame, aggregate(PLANKTIVORE~OBS_YEAR+ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
-colnames(plank) <- c("year", "island", "biomass", "SE")
-
-prim <- do.call(data.frame, aggregate(PRIMARY~OBS_YEAR+ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
-colnames(prim) <- c("year", "island", "biomass", "SE")
-
-sec <- do.call(data.frame, aggregate(SECONDARY~OBS_YEAR+ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
-colnames(sec) <- c("year", "island", "biomass", "SE")
-
-pisc$group <- c("Piscivores")
-plank$group <- c("Planktivores")
-prim$group <- c("Prim. cons.")
-sec$group <- c("Sec. cons.")
-
-all.groups <- rbind(prim, sec, plank, pisc)
-
-# All years combined means 
-pisc.allyr <- do.call(data.frame, aggregate(PISCIVORE~ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
-colnames(pisc.allyr) <- c("island", "biomass", "SE")
-
-plank.allyr <- do.call(data.frame, aggregate(PLANKTIVORE~ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
-colnames(plank.allyr) <- c("island", "biomass", "SE")
-
-prim.allyr <- do.call(data.frame, aggregate(PRIMARY~ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
-colnames(prim.allyr) <- c("island", "biomass", "SE")
-
-sec.allyr <- do.call(data.frame, aggregate(SECONDARY~ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
-colnames(sec.allyr) <- c("island", "biomass", "SE")
-
-pisc.allyr$group <- c("Piscivores")
-plank.allyr$group <- c("Planktivores")
-prim.allyr$group <- c("Prim. cons.")
-sec.allyr$group <- c("Sec. cons.")
-
-tot.allyr <- rbind(pisc.allyr, plank.allyr, prim.allyr, sec.allyr)
 
 ###############################################
 ### Total fish biomass for each individual island (TS bargraph)
@@ -105,19 +70,19 @@ for (i in unique(tot$island)){
 
 ###############################################
 ### Total fish biomass across all years faceted by island (TS bargraph)
-p.facet <- ggplot(dp, aes(x = year, y = biomass, fill = island)) +
+ggplot(subset(dp, Mean.REGION == "PRIAs" & Mean.REEF_ZONE == "Forereef"), aes(x = Mean.ANALYSIS_YEAR, y = Mean.TotFish, fill = Mean.ISLAND)) +
   geom_bar(stat = "identity", col = "black", size = .25) +
-  geom_errorbar(aes(ymax = biomass + SE, ymin=biomass - SE), width = 0, size = .25) + 
-  facet_grid(~island) +
+  geom_errorbar(aes(ymax = Mean.TotFish + PooledSE.TotFish, ymin=Mean.TotFish - PooledSE.TotFish), width = 0, size = .25) + 
+  facet_grid(~Mean.ISLAND) +
   theme_bw() + 
   theme(axis.title.x = element_blank()) + 
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
-  ggtitle("ALL FISH") +
+  ggtitle("Total Fish Biomass Across the PRIMNM (2009-2015)") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
   theme(legend.position = "none") +
   theme(legend.title=element_blank())
-ggsave(p.facet, "graphs_tables/AllFish_IslandFacet", device = "png") # doesn't work for some reason, saved manually
+ggsave(file = "graphs_tables/AllFishSPC_IslandFacet.png") # doesn't work for some reason, saved manually
 
 ###############################################
 ### Each island, total fish biomass faceted by consumer group, across all years (TS bargraph)
@@ -143,44 +108,46 @@ for (i in unique(all.groups$island)) {
 ###############################################
 ### Total fish biomass stacked by consumer group, faceted by island across all years (TS bargraph)
 # Need errorbars
-selimits <- aes(ymax = allF + allSE, ymin= allF - allSE)
+selimits <- aes(ymax = All_TotFish + All_TotFishSE, ymin= All_TotFish - All_TotFishSE)
 
-ggplot(allgroups, aes(x = year, y = biomass, fill = group)) +
+ggplot(consgrp_stack, aes(x = year, y = TotFish, fill = group)) +
   geom_bar(stat = "identity", col = "black", size = .3) +
-  geom_errorbar(selimits, width = 0.25) +
+  geom_errorbar(selimits, width = 0, size = .25) +
   facet_grid(.~island) +
   theme_bw() + 
   theme(axis.title.x = element_blank()) +
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
-  ggtitle("ALL FISH") +
+  ggtitle("Consumer Group Biomass Across the PRIMNM (2010-2015)") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
   theme(legend.position = "bottom") +
   theme(legend.title=element_blank()) 
 
-ggsave("graphs_tables/StackedConsumerGroup_IslandFacet.png") # must be last plot 
+ggsave("graphs_tables/StackedConsumerGroup_IslandFacet_lowres.png")
+ggsave("graphs_tables/StackedConsumerGroup_IslandFacet.png", dpi = 1200) # must be last plot 
 
 ### How do I add the error bar for the total mean? Its in a different dataframe...
 ### How do I change the stack order of the groups - i.e., I want Planktivores or Piscivores (or Herbivores) on the bottom
 
 ### Total fish biomass (mean of all years combined) for each island stacked by consumer group
-limits <- aes(ymax = allF + allSE, ymin= allF - allSE)
+limits <- aes(ymax = allF + allFSE, ymin= allF - allFSE)
 
-ggplot(totallyr, aes(x = island, y = biomass, fill = group)) +
+ggplot(islandmean, aes(x = island, y = biomass, fill = group)) +
   geom_bar(stat = "identity", col = "black", size = .3) +
-  geom_errorbar(limits, width = 0.25) +
+  geom_errorbar(limits, width = 0, size = 0.25) +
   theme_bw() + 
   theme(axis.title.x = element_blank()) +
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
-  ggtitle("ALL FISH") +
+  ggtitle("Consumer Group Biomass Across the PRIMNM") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   #theme(axis.text.x=element_text(angle=45, hjust=1)) +
   theme(legend.position = "bottom") +
   theme(legend.title=element_blank())
 
-ggsave("graphs_tables/StackedConsumerGroup_IslandMean.png")
+ggsave("graphs_tables/StackedConsumerGroup_IslandMean.png", dpi = 1200)
+ggsave("graphs_tables/StackedConsumerGroup_IslandMean_lowres.png")
 
-ggplot(tot.allisland, aes(x = island, y = biomass)) +
+#ggplot(tot.allisland, aes(x = island, y = biomass)) +
   geom_bar(stat = "identity", col = "black", fill = "darkred", size = .3) +
   geom_errorbar(aes(ymax=biomass+SE, ymin = biomass-SE), width = 0, size = .3) +
   theme_bw() + 
@@ -188,18 +155,15 @@ ggplot(tot.allisland, aes(x = island, y = biomass)) +
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
   ggtitle("ALL FISH") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-ggsave("graphs_tables/NoConsGroup_IslandMean.png")
+#ggsave("graphs_tables/NoConsGroup_IslandMean.png")
 
 
 ###############################################
 ### Parrotfish biomass across all years, faceted by island (TS bargraph)
-parrot <- do.call(data.frame, aggregate(Parrotfish~OBS_YEAR+ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
-colnames(parrot) <- c("year", "island", "biomass", "SE")
-
-ggplot(parrot, aes(x=year, y=biomass, fill = island)) +
+ggplot(subset(parrot_sum, Mean.REGION == "PRIAs" & Mean.REEF_ZONE == "Forereef"), aes(x=Mean.ANALYSIS_YEAR, y=Parrotfish, fill = Mean.ISLAND)) +
   geom_bar(stat = "identity", col = "black", size = .3) +
-  facet_grid(~island)+
-  geom_errorbar(aes(ymax = biomass+SE, ymin=biomass-SE), width = 0, size = .25) +
+  facet_grid(~Mean.ISLAND)+
+  geom_errorbar(aes(ymax = Parrotfish+ParrotfishSE, ymin=Parrotfish-ParrotfishSE), width = 0, size = .25) +
   theme_bw() + 
   theme(axis.title.x = element_blank()) +
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
@@ -214,9 +178,9 @@ ggsave("graphs_tables/Parrot_IslandFacet.png")
 parrot.allyr <- do.call(data.frame, aggregate(Parrotfish~ISLAND, data = subset(wsd, REEF_ZONE == "Forereef"), FUN = function(x){c(Mean = mean(x), SE = st.err(x))}))
 colnames(parrot.allyr) <- c("island", "biomass", "SE")
 
-ggplot(parrot.allyr, aes(x=island, y=biomass)) +
-  geom_bar(stat = "identity", col = "black", size = .3, aes(fill = island)) +
-  geom_errorbar(aes(ymax = biomass+SE, ymin=biomass-SE), width = 0, size = .25) +
+ggplot(subset(parrot_sum, Mean.ISLAND == "WAKE" & Mean.REEF_ZONE == "Forereef"), aes(x=Mean.ANALYSIS_YEAR, y=Parrotfish)) +
+  geom_bar(stat = "identity", col = "black", size = .3) +
+  geom_errorbar(aes(ymax = Parrotfish+ParrotfishSE, ymin=Parrotfish-ParrotfishSE), width = 0, size = .25) +
   theme_bw() + 
   theme(axis.title.x = element_blank()) +
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
