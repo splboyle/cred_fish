@@ -47,6 +47,9 @@ ggplot(subset(parrot.tow.mean, year > 2001 & island == "Wake"), aes(year, biomas
   theme(legend.position = "none")
 ggsave("graphs_tables/tow/ParrotfishTow_TS_Wake_lowres.png")
 
+wake.lm.parrot <- lm(year ~ biomass, data = subset(parrot.tow.mean, year > 2010 & island == "Wake"))
+wake.lm.parrot <- subset(parrot.tow.mean, year > 2010 & island == "Wake")
+
 ggplot_build(parrot)$data
 
 
