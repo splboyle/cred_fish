@@ -1,0 +1,285 @@
+spp,Ivor_guild,TOPHIC_MONREP,criteria,Ivor_F1,Ivor_F2
+Acanthurus achilles,H,Herb,0,GD ,GD 
+Acanthurus blochii,H,Herb,0,GD ,GD 
+Acanthurus dussumieri,H,Herb,0,GD ,GD 
+Acanthurus guttatus,H,Herb,0,GD ,GD 
+Acanthurus leucopareius,H,Herb,0,GD ,GD 
+Acanthurus nigricans,H,Herb,0,GD ,GD 
+Acanthurus nigrofuscus,H,Herb,0,GD ,GD 
+Acanthurus nigroris,H,Herb,0,GD ,GD 
+Acanthurus olivaceus,H,Herb,0,GD ,GD 
+Acanthurus thompsoni,Pk,Planktivore,0,PK,PK
+Acanthurus triostegus,H,Herb,0,GD ,GD 
+Acanthurus xanthopterus,H,Herb,0,GD ,GD 
+Centropyge sp,NA,NA,0,GD ,GD 
+Ctenochaetus hawaiiensis,H,Herb,0,DT,DT
+Ctenochaetus sp,H,Herb,0,GD ,GD 
+Ctenochaetus strigosus,H,Herb,0,DT,DT
+Naso annulatus,Pk,Planktivore,20,B ,PK
+Naso brevirostris,Pk,Planktivore,20,B ,PK
+Naso caesius,Pk,Planktivore,0,PK,PK
+Naso hexacanthus,Pk,Planktivore,0,PK,PK
+Naso lituratus,H,Herb,0,B ,B 
+Naso maculatus,Pk,Planktivore,20,B ,PK
+Naso unicornis,H,Herb,0,B ,B 
+Zebrasoma flavescens,H,Herb,0,GD ,GD 
+Luzonichthys earlei,Pk,Planktivore,0,PK,PK
+Luzonichthys waitei,Pk,Planktivore,0,PK,PK
+Luzonichthys whitleyi,Pk,Planktivore,0,PK,PK
+Pseudanthias bartlettorum,Pk,Planktivore,0,PK,PK
+Pseudanthias bicolor,Pk,Planktivore,0,PK,PK
+Pseudanthias cooperi,Pk,Planktivore,0,PK,PK
+Pseudanthias dispar,Pk,Planktivore,0,PK,PK
+Pseudanthias olivaceus,Pk,Planktivore,0,PK,PK
+Pseudanthias pascalus,Pk,Planktivore,0,PK,PK
+Pseudanthias pleurotaenia,Pk,Planktivore,0,PK,PK
+Pseudanthias thompsoni,Pk,Planktivore,0,PK,PK
+Pseudanthias ventralis hawaiiensis,Pk,Planktivore,0,PK,PK
+Apogon angustatus,Pk,Planktivore,0,PK,PK
+Apogon apogonoides,Pk,Planktivore,0,PK,PK
+Apogon exostigma,Pk,Planktivore,0,PK,PK
+Apogon fraenatus,Pk,Planktivore,0,PK,PK
+Apogon kallopterus,Pk,Planktivore,0,PK,PK
+Apogon luteus,Pk,Planktivore,0,PK,PK
+Apogon maculiferus,Pk,Planktivore,0,PK,PK
+Apogon novemfasciatus,Pk,Planktivore,0,PK,PK
+Apogon taeniopterus,Pk,Planktivore,0,PK,PK
+Apogon trimaculatus,Pk,Planktivore,0,PK,PK
+Apogonichthys perdix,Pk,Planktivore,0,PK,PK
+Archamia biguttata,Pk,Planktivore,0,PK,PK
+Archamia fucata,Pk,Planktivore,0,PK,PK
+Foa brachygramma,Pk,Planktivore,0,PK,PK
+Atherinomorus insularum,Pk,Planktivore,0,PK,PK
+Canthidermis maculata,Pk,Planktivore,0,PK,PK
+Melichthys niger,Pk,Planktivore,0,PK,PK
+Melichthys vidua,H,Herb,0,OTH_HERB,OTH_HERB
+Odonus niger,Pk,Planktivore,0,PK,PK
+Xanthichthys auromarginatus,Pk,Planktivore,0,PK,PK
+Xanthichthys caeruleolineatus,Pk,Planktivore,0,PK,PK
+Xanthichthys mento,Pk,Planktivore,0,PK,PK
+Ablennes hians,H,Herb,0,OTH_HERB,OTH_HERB
+Blenniella chrysospilos,Pk,Planktivore,0,PK,PK
+Cirripectes obscurus,H,Herb,0,OTH_HERB,OTH_HERB
+Cirripectes polyzona,H,Herb,0,OTH_HERB,OTH_HERB
+Cirripectes sebae,H,Herb,0,OTH_HERB,OTH_HERB
+Cirripectes springeri,H,Herb,0,OTH_HERB,OTH_HERB
+Cirripectes stigmaticus,H,Herb,0,OTH_HERB,OTH_HERB
+Cirripectes vanderbilti,H,Herb,0,OTH_HERB,OTH_HERB
+Cirripectes variolosus,H,Herb,0,OTH_HERB,OTH_HERB
+Ecsenius bicolor,Pk,Planktivore,0,PK,PK
+Ecsenius midas,Pk,Planktivore,0,PK,PK
+Ecsenius monoculus,H,Herb,0,OTH_HERB,OTH_HERB
+Ecsenius opsifrontalis,Pk,Planktivore,0,PK,PK
+Istiblennius zebra,H,Herb,0,OTH_HERB,OTH_HERB
+Meiacanthus atrodorsalis,Pk,Planktivore,0,PK,PK
+Parablennius marmoratus,H,Herb,0,OTH_HERB,OTH_HERB
+Caesio caerulaurea,Pk,Planktivore,0,PK,PK
+Caesio cuning,Pk,Planktivore,0,PK,PK
+Caesio lunaris,Pk,Planktivore,0,PK,PK
+Caesio teres,Pk,Planktivore,0,PK,PK
+Pterocaesio marri,Pk,Planktivore,0,PK,PK
+Pterocaesio tile,Pk,Planktivore,0,PK,PK
+Pterocaesio trilineata,Pk,Planktivore,0,PK,PK
+Synchiropus moyeri,Pk,Planktivore,0,PK,PK
+Atule mate,Pk,Planktivore,0,PK,PK
+Decapterus macarellus,Pk,Planktivore,0,PK,PK
+Selar crumenophthalmus,Pk,Planktivore,0,PK,PK
+Chaetodon kleinii,Pk,Planktivore,0,PK,PK
+Chaetodon mertensii,H,Herb,0,OTH_HERB,OTH_HERB
+Chaetodon miliaris,Pk,Planktivore,0,PK,PK
+Chaetodon semeion,H,Herb,0,OTH_HERB,OTH_HERB
+Hemitaurichthys polylepis,Pk,Planktivore,0,PK,PK
+Hemitaurichthys thompsoni,Pk,Planktivore,0,PK,PK
+Heniochus acuminatus,Pk,Planktivore,0,PK,PK
+Heniochus diphreutes,Pk,Planktivore,0,PK,PK
+Chanos chanos,H,Herb,0,OTH_HERB,OTH_HERB
+Chelonia mydas,H,Herb,0,OTH_HERB,OTH_HERB
+Oxycirrhites typus,Pk,Planktivore,0,PK,PK
+Spratelloides delicatulus,Pk,Planktivore,0,PK,PK
+Echeneis naucrates,Pk,Planktivore,0,PK,PK
+Encrasicholina purpurea,Pk,Planktivore,0,PK,PK
+Platax batavianus,NA,NA,0,B ,B 
+Platax boersi,NA,NA,0,B ,B 
+Platax boersii,Om,LowCarn,0,B ,B 
+Platax pinnatus,NA,NA,0,B ,B 
+Platax teira,Om,LowCarn,0,B ,B 
+Amblyeleotris fasciata,Pk,Planktivore,0,PK,PK
+Amblyeleotris guttata,Pk,Planktivore,0,PK,PK
+Amblyeleotris steinitzi,Pk,Planktivore,0,PK,PK
+Amblygobius phalaena,H,Herb,0,OTH_HERB,OTH_HERB
+Ctenogobiops pomastictus,Pk,Planktivore,0,PK,PK
+Lotilia graciliosa,Pk,Planktivore,0,PK,PK
+Trimmatom eviotops,Pk,Planktivore,0,PK,PK
+Hyporhamphus acutus acutus,Pk,Planktivore,0,PK,PK
+Myripristis adusta,Pk,Planktivore,0,PK,PK
+Myripristis amaena,Pk,Planktivore,0,PK,PK
+Myripristis berndti,Pk,Planktivore,0,PK,PK
+Myripristis chryseres,Pk,Planktivore,0,PK,PK
+Myripristis kuntee,Pk,Planktivore,0,PK,PK
+Myripristis murdjan,Pk,Planktivore,0,PK,PK
+Myripristis vittata,Pk,Planktivore,0,PK,PK
+Myripristis woodsi,Pk,Planktivore,0,PK,PK
+Pristilepis oligolepis,Pk,Planktivore,0,PK,PK
+Kuhlia sandvicensis,Pk,Planktivore,0,PK,PK
+Kyphosidae sp,H,Herb,0,B ,B 
+Kyphosus cinerascens,H,Herb,0,B ,B 
+Kyphosus hawaiiensis,H,Herb,0,B ,B 
+Kyphosus pacificus,H,Herb,0,B ,B 
+Kyphosus sandwicensis,H,Herb,0,B ,B 
+Kyphosus vaigiensis,H,Herb,0,B ,B 
+Sectator ocyurus,H,Herb,0,B ,B 
+Anampses geographicus,Pk,Planktivore,0,PK,PK
+Bodianus anthioides,Pk,Planktivore,0,PK,PK
+Cirrhilabrus balteatus,Pk,Planktivore,0,PK,PK
+Cirrhilabrus exquisitus,Pk,Planktivore,0,PK,PK
+Cirrhilabrus jordani,Pk,Planktivore,0,PK,PK
+Cirrhilabrus katherinae,Pk,Planktivore,0,PK,PK
+Cirrhilabrus luteovittatus,Pk,Planktivore,0,PK,PK
+Pseudocoris yamashiroi,Pk,Planktivore,0,PK,PK
+Stethojulis bandanensis,Pk,Planktivore,0,PK,PK
+Thalassoma amblycephalum,Pk,Planktivore,0,PK,PK
+Thalassoma hardwicke,Pk,Planktivore,0,PK,PK
+Thalassoma lunare,Pk,Planktivore,0,PK,PK
+Macolor macularis,Pk,Planktivore,0,PK,PK
+Macolor niger,Pk,Planktivore,0,PK,PK
+Gunnellichthys curiosus,Pk,Planktivore,0,PK,PK
+Manta birostris,Pk,Planktivore,0,PK,PK
+Cantherhines pardalis,H,Herb,0,OTH_HERB,OTH_HERB
+Cantherhines sandwichiensis,H,Herb,0,OTH_HERB,OTH_HERB
+Cantherhines verecundus,H,Herb,0,OTH_HERB,OTH_HERB
+Liza vaigiensis,Pk,Planktivore,0,PK,PK
+Mugil cephalus,Pk,Planktivore,0,PK,PK
+Ostracion cubicus,H,Herb,0,OTH_HERB,OTH_HERB
+Pempheris oualensis,Pk,Planktivore,0,PK,PK
+Centropyge bicolor,H,Herb,0,GD ,GD 
+Centropyge bispinosa,H,Herb,0,GD ,GD 
+Centropyge fisheri,H,Herb,0,GD ,GD 
+Centropyge flavicauda,H,Herb,0,GD ,GD 
+Centropyge flavissima,H,Herb,0,GD ,GD 
+Centropyge heraldi,H,Herb,0,GD ,GD 
+Centropyge interruptus,H,Herb,0,OTH_HERB,OTH_HERB
+Centropyge loricula,H,Herb,0,GD ,GD 
+Centropyge multicolor,H,Herb,0,GD ,GD 
+Centropyge potteri,H,Herb,0,GD ,GD 
+Centropyge shepardi,H,Herb,0,GD ,GD 
+Centropyge vrolikii,H,Herb,0,GD ,GD 
+Genicanthus personatus,Pk,Planktivore,0,PK,PK
+Genicanthus watanabei,Pk,Planktivore,0,PK,PK
+Abudefduf abdominalis,Pk,Planktivore,0,PK,PK
+Abudefduf septemfasciatus,H,Herb,0,OTH_HERB,OTH_HERB
+Abudefduf sexfasciatus,Pk,Planktivore,0,PK,PK
+Abudefduf sordidus,H,Herb,0,GD ,GD 
+Abudefduf vaigiensis,Pk,Planktivore,0,PK,PK
+Amblyglyphidodon aureus,Pk,Planktivore,0,PK,PK
+Amblyglyphidodon leucogaster,Pk,Planktivore,0,PK,PK
+Amphiprion chrysopterus,Pk,Planktivore,0,PK,PK
+Amphiprion clarkii,Pk,Planktivore,0,PK,PK
+Amphiprion melanopus,Pk,Planktivore,0,PK,PK
+Amphiprion perideraion,Pk,Planktivore,0,PK,PK
+Amphiprion tricinctus,H,Herb,0,OTH_HERB,OTH_HERB
+Chromis acares,Pk,Planktivore,0,PK,PK
+Chromis agilis,Pk,Planktivore,0,PK,PK
+Chromis alpha,Pk,Planktivore,0,PK,PK
+Chromis amboinensis,H,Herb,0,OTH_HERB,OTH_HERB
+Chromis atripectoralis,Pk,Planktivore,0,PK,PK
+Chromis atripes,H,Herb,0,OTH_HERB,OTH_HERB
+Chromis caudalis,Pk,Planktivore,0,PK,PK
+Chromis fumea,Pk,Planktivore,0,PK,PK
+Chromis hanui,Pk,Planktivore,0,PK,PK
+Chromis iomelas,H,Herb,0,OTH_HERB,OTH_HERB
+Chromis lepidolepis,Pk,Planktivore,0,PK,PK
+Chromis leucura,Pk,Planktivore,0,PK,PK
+Chromis margaritifer,Pk,Planktivore,0,PK,PK
+Chromis ovalis,Pk,Planktivore,0,PK,PK
+Chromis ternatensis,Pk,Planktivore,0,PK,PK
+Chromis vanderbilti,Pk,Planktivore,0,PK,PK
+Chromis verater,Pk,Planktivore,0,PK,PK
+Chromis viridis,Pk,Planktivore,0,PK,PK
+Chromis weberi,Pk,Planktivore,0,PK,PK
+Chromis xanthura,Pk,Planktivore,0,PK,PK
+Chrysiptera biocellata,H,Herb,0,TD,TD
+Chrysiptera brownriggii,H,Herb,0,TD,TD
+Chrysiptera cyanea,Pk,Planktivore,0,PK,PK
+Chrysiptera glauca,H,Herb,0,TD,TD
+Chrysiptera taupou,H,Herb,0,TD,TD
+Chrysiptera traceyi,H,Herb,0,TD,TD
+Dascyllus albisella,Pk,Planktivore,0,PK,PK
+Dascyllus aruanus,Pk,Planktivore,0,PK,PK
+Dascyllus auripinnis,Pk,Planktivore,0,PK,PK
+Dascyllus reticulatus,Pk,Planktivore,0,PK,PK
+Dascyllus trimaculatus,Pk,Planktivore,0,PK,PK
+Lepidozygus tapeinosoma,Pk,Planktivore,0,PK,PK
+Neopomacentrus metallicus,Pk,Planktivore,0,PK,PK
+Plectroglyphidodon lacrymatus,Pk,Planktivore,0,PK,PK
+Plectroglyphidodon leucozonus,H,Herb,0,TD,TD
+Plectroglyphidodon phoenixensis,H,Herb,0,TD,TD
+Plectroglyphidodon sindonis,H,Herb,0,TD,TD
+Pomacentrus amboinensis,Pk,Planktivore,0,PK,PK
+Pomacentrus brachialis,Pk,Planktivore,0,PK,PK
+Pomacentrus coelestis,Pk,Planktivore,0,PK,PK
+Pomacentrus pavo,Pk,Planktivore,0,PK,PK
+Pomacentrus samoa,Pk,Planktivore,0,PK,PK
+Pomacentrus vaiuli,Pk,Planktivore,0,PK,PK
+Pomachromis guamensis,Pk,Planktivore,0,PK,PK
+Pomachromis richardsoni,Pk,Planktivore,0,PK,PK
+Stegastes albifasciatus,H,Herb,0,TD,TD
+Stegastes aureus,H,Herb,0,TD,TD
+Stegastes fasciolatus,H,Herb,0,TD,TD
+Stegastes lividus,H,Herb,0,TD,TD
+Stegastes nigricans,H,Herb,0,TD,TD
+Heteropriacanthus cruentatus,Pk,Planktivore,0,PK,PK
+Priacanthus meeki,Pk,Planktivore,0,PK,PK
+Nemateleotris helfrichi,Pk,Planktivore,0,PK,PK
+Nemateleotris magnifica,Pk,Planktivore,0,PK,PK
+Ptereleotris evides,Pk,Planktivore,0,PK,PK
+Ptereleotris heteroptera,Pk,Planktivore,0,PK,PK
+Ptereleotris microlepis,Pk,Planktivore,0,PK,PK
+Ptereleotris zebra,Pk,Planktivore,0,PK,PK
+Bolbometopon muricatum,Cor,LowCarn,35,SSE,LE
+Calotomus carolinus,H,Herb,0,B ,B 
+Calotomus zonarchus,H,Herb,0,B ,B 
+Cetoscarus ocellatus,H,Herb,35,SSE,LE
+Chlorurus frontalis,H,Herb,20,SSE,LE
+Chlorurus japanensis,H,Herb,35,SSE,SSE
+Chlorurus microrhinos,H,Herb,20,SSE,LE
+Chlorurus perspicillatus,H,Herb,35,SSE,LE
+Chlorurus sordidus,H,Herb,35,SSE,LE
+Chlorurus sp,H,Herb,35,SSE,SSE
+Hipposcarus longiceps,H,Herb,0,SSE,SSE
+Scaridae sp,H,Herb,0,SSE,LE
+Scarus altipinnis,H,Herb,0,SSE,SSE
+Scarus dimidiatus,H,Herb,0,SSE,SSE
+Scarus dubius,H,Herb,0,SSE,SSE
+Scarus festivus,H,Herb,0,SSE,SSE
+Scarus flavipectoralis,H,Herb,0,SSE,SSE
+Scarus forsteni,H,Herb,0,SSE,SSE
+Scarus frenatus,H,Herb,0,SSE,SSE
+Scarus fuscocaudalis,H,Herb,0,SSE,SSE
+Scarus ghobban,H,Herb,0,SSE,SSE
+Scarus globiceps,H,Herb,0,SSE,SSE
+Scarus niger,H,Herb,0,SSE,SSE
+Scarus oviceps,H,Herb,0,SSE,SSE
+Scarus psittacus,H,Herb,0,SSE,SSE
+Scarus quoyi,H,Herb,0,SSE,SSE
+Scarus rivulatus,H,Herb,0,SSE,SSE
+Scarus rubroviolaceus,H,Herb,35,SSE,LE
+Scarus schlegeli,H,Herb,0,SSE,SSE
+Scarus spinus,H,Herb,0,SSE,SSE
+Scarus tricolor,H,Herb,0,SSE,SSE
+Scarus xanthopleura,H,Herb,0,SSE,SSE
+Siganus argenteus,H,Herb,0,GD ,GD 
+Siganus puellus,H,Omni,0,OTH_HERB,OTH_HERB
+Siganus punctatus,H,Omni,0,GD ,GD 
+Siganus spinus,H,Herb,0,GD ,GD 
+Siganus vulpinus,H,Herb,0,OTH_HERB,OTH_HERB
+Corythoichthys flavofasciatus,Pk,Planktivore,0,PK,PK
+Doryrhamphus excisus excisus,Pk,Planktivore,0,PK,PK
+Canthigaster amboinensis,H,Herb,0,OTH_HERB,OTH_HERB
+Canthigaster bennetti,H,Herb,0,OTH_HERB,OTH_HERB
+Canthigaster coronata,H,Herb,0,OTH_HERB,OTH_HERB
+Canthigaster epilampra,H,Herb,0,OTH_HERB,OTH_HERB
+Canthigaster jactator,H,Herb,0,OTH_HERB,OTH_HERB
+Canthigaster janthinoptera,H,Herb,0,OTH_HERB,OTH_HERB
+Canthigaster rivulata,H,Herb,0,OTH_HERB,OTH_HERB
+Canthigaster solandri,H,Herb,0,OTH_HERB,OTH_HERB
+Canthigaster valentini,H,Herb,0,OTH_HERB,OTH_HERB

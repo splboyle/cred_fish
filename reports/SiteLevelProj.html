@@ -134,12 +134,17 @@ Perhaps some estimate of size structure, such as mean size of fishes at each sit
 </div>
 <div id="site-level-drivers" class="section level4">
 <h4>Site Level Drivers</h4>
+<ul>
+<li>Should exclude outliers… rationale for this?</li>
+</ul>
 <div id="wave-energy" class="section level5">
 <h5>Wave Energy</h5>
 <ul>
 <li>I expect higher biomass but lower diversity/species richness at high wave energy sites and lower biomass but higher species richness at low wave energy sites.<br />
 </li>
-<li>However, it is possible that there may not be a significant shift in biomass across wave regimes because of the different relative abundance of groups. Some studies have found higher biomass (very abundant large, heavy fishes; piscivores) in high wave energy sites, whereas other studies have found higher biomass at sheltered sites. Preliminary exploration has shown many non-significant trends between total fish biomass and mean wave energy. However, some have shown negative trends.</li>
+<li>However, it is possible that there may not be a significant shift in biomass across wave regimes because of the different relative abundance of groups. Some studies have found higher biomass (very abundant large, heavy fishes; piscivores) in high wave energy sites, whereas other studies have found higher biomass at sheltered sites. Preliminary exploration has shown many non-significant trends between total fish biomass and mean wave energy. However, some have shown negative trends.<br />
+</li>
+<li>Gove et al. (2013): Island level mean wave energy was significantly different between regions. At the site level will we see the same patterns?</li>
 </ul>
 </div>
 <div id="depth" class="section level5">
@@ -161,27 +166,98 @@ Perhaps some estimate of size structure, such as mean size of fishes at each sit
 <div id="coral-cover" class="section level5">
 <h5>Coral Cover</h5>
 <ul>
-<li>Similar to benthic complexity above.</li>
+<li>Similar to benthic complexity above.<br />
+</li>
+<li>Will need to interpolate this across the study space.</li>
 </ul>
 </div>
 <div id="macroalgae-cover" class="section level5">
 <h5>Macroalgae cover</h5>
 <ul>
 <li>I expect a significant negative relationship between macroalgal cover and herbivorous fishes. Furthermore, I also expect to see a significant negative interaction between MA cover and both CCA and hard coral cover.</li>
+<li>Will need to interpolate this across the study space.</li>
 </ul>
 </div>
 <div id="cca-cover" class="section level5">
 <h5>CCA cover</h5>
 <ul>
-<li>I expect a positive relationship with herbivorous fish biomass.</li>
+<li>I expect a positive relationship with herbivorous fish biomass.<br />
+</li>
+<li>Will need to interpolate this across the study space.</li>
 </ul>
+<p>What about other coral indicators? - Bleaching prevalence/ coral disease? Is this a island level or site level metric?</p>
 </div>
 </div>
 <div id="island-level-drivers" class="section level4">
 <h4>Island Level Drivers</h4>
 <ul>
-<li>I am also very interested in including a few variables at the island scale such as productivity (i.e., Chl-a or NPP) and temperature if possible. If I do decide to include these variables, I would most likely run the model twice, once with the large scale drivers and once without them. It will be particularly interesting to see the level of interaction between the island level and the site level drivers.</li>
+<li><p>I am also very interested in including a few variables at the island scale such as productivity (i.e., Chl-a or NPP) and temperature if possible. If I do decide to include these variables, I would most likely run the model twice, once with the large scale drivers and once without them. It will be particularly interesting to see the level of interaction between the island level and the site level drivers.</p></li>
+<li>Valuable to include upper, lower range limits and long-term mean and anomaly metrics for the island level environmental characteristics?</li>
+<li><p>Ellis et al. (2012) included SST average and SST range, chl-a average and chl-a range</p></li>
 </ul>
+<div id="latitude" class="section level5">
+<h5>Latitude</h5>
+<ul>
+<li>Give context to scale. Would this bias results? Definite colinearity between latitude and others: SST, Chl-a.</li>
+</ul>
+</div>
+<div id="chlorophyll-a" class="section level5">
+<h5>Chlorophyll-a</h5>
+<ul>
+<li>What is the finest scale possible to include Chl-a for the islands that also minimizes bias? From Gove et al. (2013) they have a long-term mean from each contour but the contours are outside the sampling area…</li>
+<li>Would the long-term mean from (Gove et al. 2013) be the most useful?</li>
+<li>What about anomaly values? Is there value in including this? How do anomalous productivity events or temperature events shape the fish community?</li>
+<li>Anomalies in productivity or temperature would effect coral health (bleaching) and upwelling behavior, etc. and there may be some variability present that wouldn’t be captured by the mean. Does this mean that wave anomalies need to be included too? How would wave anomalies influence the biological community? Could decrease complexity or alter coral cover…</li>
+</ul>
+</div>
+<div id="sst" class="section level5">
+<h5>SST</h5>
+<ul>
+<li>Hotspot metrics?</li>
+</ul>
+</div>
+<div id="irradiance" class="section level5">
+<h5>Irradiance?</h5>
+<ul>
+<li>Similarities between JOH, WAK; KIN, PAL; BAK, HOW, JAR - ?</li>
+</ul>
+</div>
+<div id="microbilization-score" class="section level5">
+<h5>Microbilization Score?</h5>
+<ul>
+<li>This calculation is calculated using fish biomass at the site. So it will definitely be correlated with fish biomass. How would this influence results?</li>
+<li>Does not correlate with oceanographic characteristics like primary productivity (Is this NPP?), local chl-a (How do the measure this?)</li>
+<li>They determine MS for islands by calculating for site level and then averaging the scores. Could I use the site level scores? How much variability in site level scores is there?</li>
+<li>They used BLT data to calculate biomass.. used island level averages of fish biomass</li>
+</ul>
+</div>
+<div id="aragonite-saturation-rate" class="section level5">
+<h5>Aragonite Saturation Rate</h5>
+<p>What other things might affect fish assemblage at these islands? - What about reef area? - I’m very interested in the cumulative</p>
+</div>
+</div>
+<div id="biological-indicators" class="section level4">
+<h4>Biological Indicators</h4>
+<p>How am I grouping the reef fish assemblage?</p>
+<p><strong>From MacNeil et al. (2015)</strong><br />
+- Browser<br />
+- Corallivore<br />
+- Detritivore<br />
+- Excavator/scraper *replace with finer scale grouping from Green and Bellwood (2009)<br />
+- Grazer<br />
+- Macro-invertivore<br />
+- Microinvertivore<br />
+- Pisci-invertivore<br />
+- Piscivore<br />
+- Planktivore<br />
+- Spongivore<br />
+- Large excavators/bioeroders<br />
+- Scrapers/small excavators</p>
+<p><strong>Herbivore grouping from Green and Bellwood (2009)</strong><br />
+- Browsers<br />
+- Grazers/detritivores<br />
+- Large excavators/bioeroders<br />
+- Scrapers/small excavators</p>
 </div>
 <div id="possible-approach" class="section level4">
 <h4>Possible Approach</h4>

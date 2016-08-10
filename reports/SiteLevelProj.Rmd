@@ -16,7 +16,9 @@ Measure of assemblage similarity/dissimilarity (perhaps Jaccard/Sorensen Indices
 Perhaps some estimate of size structure, such as mean size of fishes at each site  
 
 #### **Environmental Drivers**  
-#### Site Level Drivers    
+#### Site Level Drivers
+- Should exclude outliers... rationale for this? 
+
 ##### Wave Energy
 
 -	I expect higher biomass but lower diversity/species richness at high wave energy sites and lower biomass but higher species richness at low wave energy sites.  
@@ -54,6 +56,7 @@ What about other coral indicators?
 -	I am also very interested in including a few variables at the island scale such as productivity (i.e., Chl-a or NPP) and temperature if possible. If I do decide to include these variables, I would most likely run the model twice, once with the large scale drivers and once without them. It will be particularly interesting to see the level of interaction between the island level and the site level drivers.   
 
 - Valuable to include upper, lower range limits and long-term mean and anomaly metrics for the island level environmental characteristics?
+- Ellis et al. (2012) included SST average and SST range, chl-a average and chl-a range 
 
 
 ##### Latitude
@@ -82,11 +85,40 @@ From Gove et al. (2013) they have a long-term mean from each contour but the con
 
 What other things might affect fish assemblage at these islands? 
 - What about reef area? 
-- I'm very interested in the cumulative 
+- I'm very interested in the cumulative  
+
+#### Biological Indicators  
+How am I grouping the reef fish assemblage?  
+
+**From MacNeil et al. (2015)**  
+- Browser  
+- Corallivore  
+- Detritivore  
+- Excavator/scraper *replace with finer scale grouping from Green and Bellwood (2009)  
+- Grazer  
+- Macro-invertivore  
+- Microinvertivore  
+- Pisci-invertivore  
+- Piscivore  
+- Planktivore  
+- Spongivore  
+- Large excavators/bioeroders  
+- Scrapers/small excavators  
+
+**Herbivore grouping from Green and Bellwood (2009)**  
+- Browsers  
+- Grazers/detritivores  
+- Large excavators/bioeroders  
+- Scrapers/small excavators 
+
+
+
+
 
 
 ####  Possible Approach  
 -	Gradient forest 
+Why do I want to use this method? What is the benefit of using this method? 
 
 
 #### Data Exploration  

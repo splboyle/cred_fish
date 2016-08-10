@@ -1,0 +1,522 @@
+spp,A2_guild,A2_fg,A2_size,A2_schooling
+Acanthurus achilles,Herbivore,Grazer,25,4
+Acanthurus achillesXnigricans hybrid= rackliffei,Herbivore,Grazer,25,4
+Acanthurus albipectoralis,Planktivore,Diurnal planktivore,33,4
+Acanthurus blochii,Herbivore,Grazer,43,3
+Acanthurus dussumieri,Herbivore,Grazer,56,3
+Acanthurus guttatus,Herbivore,Grazer,29,5
+Acanthurus leucocheilus,Herbivore,Grazer,45,3
+Acanthurus leucopareius,Herbivore,Grazer,25,4
+Acanthurus lineatus,Herbivore,Grazer,38,3
+Acanthurus maculiceps,Herbivore,Grazer,41,3
+Acanthurus mata,Planktivore,Diurnal planktivore,50,5
+Acanthurus nigricans,Herbivore,Grazer,23,3
+Acanthurus nigricauda,Herbivore,Grazer,40,3
+Acanthurus nigrofuscus,Herbivore,Grazer,23,3
+Acanthurus nigroris,Herbivore,Grazer,25,3
+Acanthurus nubilus,Planktivore,Diurnal planktivore,26,3
+Acanthurus olivaceus,Herbivore,Grazer,40,4
+Acanthurus pyroferus,Herbivore,Grazer,25,3
+Acanthurus thompsoni,Planktivore,Diurnal planktivore,28,4
+Acanthurus triostegus,Herbivore,Grazer,27,5
+Acanthurus xanthopterus,Herbivore,Grazer,65,4
+Acanthurus sp.,Herbivore,Grazer,34.9,3
+Ctenochaetus binotatus,Detritivore,Detritivore,22,3
+Ctenochaetus cyanocheilus,Detritivore,Detritivore,20,3
+Ctenochaetus flavicauda,Detritivore,Detritivore,17,3
+Ctenochaetus hawaiiensis,Detritivore,Detritivore,28,3
+Ctenochaetus marginatus,Detritivore,Detritivore,29,3
+Ctenochaetus striatus,Detritivore,Detritivore,28,4
+Ctenochaetus strigosus,Detritivore,Detritivore,24,3
+Ctenochaetus sp. ,Detritivore,Detritivore,30,3
+Naso annulatus,Planktivore,Diurnal planktivore,100,4
+Naso brachycentron,Herbivore,Browser,90,4
+Naso brevirostris,Planktivore,Diurnal planktivore,60,5
+Naso caesius,Planktivore,Diurnal planktivore,62,4
+Naso hexacanthus,Planktivore,Diurnal planktivore,75,5
+Naso lituratus,Herbivore,Browser,46,3
+Naso maculatus,Herbivore,Browser,60,3
+Naso tonganus,Herbivore,Browser,63,4
+Naso unicornis,Herbivore,Browser,70,3
+Naso vlamingii,Planktivore,Diurnal planktivore,60,3
+Paracanthurus hepatus,Herbivore/Planktivore,Browser/,31,4
+,,Diurnal planktivore,,
+Zebrasoma flavescens,Herbivore,Grazer,20,3
+Zebrasoma rostratum,Herbivore,Grazer,21,3
+Zebrasoma scopas,Herbivore,Grazer,20,3
+Zebrasoma veliferum,Herbivore,Grazer,40,2
+Acanthuridae sp.,Herbivore,Grazer,40.4,3
+Apogon angustatus,Planktivore,Nocturnal planktivore,9,3
+Apogon apogonoides,Planktivore,Nocturnal planktivore,10,3
+Apogon kallopterus,Carnivore,Invertivore,12,3
+Apogon novemfasciatus,Planktivore,Nocturnal planktivore,9.5,3
+Apogon sp.,Planktivore,Nocturnal planktivore,16,3
+Cheilodipterus artus,Carnivore,Nocturnal piscivore,18.7,3
+Cheilodipterus quinquelineatus,Carnivore,Generalist carnivore,12,3
+Apogonidae sp.,Planktivore,Nocturnal planktivore,12.5,3
+Aulostomus chinensis,Carnivore,Diurnal piscivore,80,1
+Balistapus undulatus,Carnivore,Invertivore,30,1
+Balistoides conspicillum,Carnivore,Invertivore,50,1
+Balistoides viridescens,Carnivore,Invertivore,75,1
+Melichthys niger,Omnivore,Pelagic omnivore,38,4
+Melichthys vidua,Omnivore,Benthic omnivore,34,4
+Odonus niger,Planktivore,Diurnal planktivore,40,4
+Pseudobalistes flavimarginatus,Carnivore,Invertivore,60,1
+Rhinecanthus aculeatus,Omnivore,Benthic omnivore,30,1
+Rhinecanthus rectangulus,Omnivore,Benthic omnivore,25,1
+Sufflamen bursa,Omnivore,Benthic omnivore,28,1
+Sufflamen chrysopterum,Carnivore,Invertivore,22,1
+Sufflamen fraenatum,Carnivore,Generalist carnivore,38,1
+Xanthichthys auromarginatus,Planktivore,Diurnal planktivore,22,4
+Xanthichthys caeruleolineatus,Planktivore,Diurnal planktivore,35,4
+Xanthichthys mento,Planktivore,Diurnal planktivore,30,4
+Balistidae sp.,Carnivore,Invertivore,38.9,1
+Tylosurus crocodilus,Carnivore,Nocturnal piscivore,135,3
+Aspidontus taeniatus,Carnivore,Diurnal piscivore,12,1
+Cirripectes obscurus,Herbivore,Grazer,10,1
+Cirripectes polyzona,Herbivore,Grazer,10,1
+Cirripectes sp,Herbivore,Grazer,11,1
+Cirripectes vanderbilti,Herbivore,Grazer,10,1
+Cirripectes variolosus,Herbivore,Grazer,10,1
+Ecsenius bicolor,Planktivore,Diurnal planktivore,10,1
+Ecsenius midas,Planktivore,Diurnal planktivore,10,3
+Ecsenius opsifrontalis,Herbivore,Grazer,10,3
+Exallias brevis,Carnivore,Corallivore,16,1
+Meiacanthus atrodorsalis,Carnivore,Invertivore,10,2
+Plagiotremus ewaensis,Carnivore,Diurnal piscivore,10,1
+Plagiotremus goslinei,Carnivore,Diurnal piscivore,10,1
+Plagiotremus rhinorhynchos,Carnivore,Diurnal piscivore,10,1
+Plagiotremus tapeinosoma,Carnivore,Diurnal piscivore,10,1
+Blenniidae sp.,Herbivore,Grazer,10.4,1
+Bothus mancus,Carnivore,Nocturnal piscivore,45,1
+Caesio teres,Planktivore,Diurnal planktivore,40,5
+Pterocaesio marri,Planktivore,Diurnal planktivore,35,5
+Pterocaesio tile,Planktivore,Diurnal planktivore,30,5
+Caracanthus maculatus,Carnivore,Generalist carnivore,5,1
+Caracanthus typicus,Carnivore,Generalist carnivore,2.9,1
+Carangoides ferdau,Carnivore,Invertivore,70,4
+Carangoides orthogrammus,Carnivore,Invertivore,70,3
+Caranx ignobilis,Carnivore,Diurnal piscivore,165,3
+Caranx lugubris,Carnivore,Diurnal piscivore,100,3
+Caranx melampygus,Carnivore,Diurnal piscivore,117,3
+Caranx sexfasciatus,Carnivore,Nocturnal piscivore,100,4
+Decapterus macarellus,Planktivore,Diurnal planktivore,35,4
+Elagatis bipinnulata,Carnivore,Diurnal piscivore,180,4
+Scomberoides lysan,Carnivore,Diurnal piscivore,70,3
+Selar crumenophthalmus,Planktivore,Nocturnal planktivore,30,5
+Seriola dumerili,Carnivore,Diurnal piscivore,190,3
+Trachinotus baillonii,Carnivore,Diurnal piscivore,54,3
+Carcharhinus amblyrhynchos,Carnivore,Piscivore,240,1
+Carcharhinus galapagensis,Carnivore,Piscivore,370,1
+Carcharhinus melanopterus,Carnivore,Piscivore,200,1
+Triaenodon obesus,Carnivore,Nocturnal piscivore,213,1
+Chaetodon auriga,Carnivore,Corallivore,23,2
+Chaetodon bennetti,Carnivore,Corallivore,18,2
+Chaetodon citrinellus,Carnivore,Corallivore,13,2
+Chaetodon ephippium,Carnivore,Corallivore,23,2
+Chaetodon flavocoronatus,Carnivore,Corallivore,12,2
+Chaetodon fremblii,Carnivore,Invertivore,15,2
+Chaetodon kleinii,Carnivore,Corallivore,14,2
+Chaetodon lunula,Carnivore,Invertivore,21,2
+Chaetodon lunulatus,Carnivore,Corallivore,15,2
+Chaetodon melannotus,Carnivore,Corallivore,15,2
+Chaetodon mertensii,Carnivore,Invertivore,13,2
+Chaetodon meyeri,Carnivore,Corallivore,18,2
+Chaetodon miliaris,Planktivore,Diurnal planktivore,16,2
+Chaetodon multicinctus,Carnivore,Corallivore,12,2
+Chaetodon ornatissimus,Carnivore,Corallivore,20,2
+Chaetodon pelewensis,Carnivore,Corallivore,13,2
+Chaetodon punctatofasciatus,Carnivore,Corallivore,12,2
+Chaetodon quadrimaculatus,Carnivore,Corallivore,16,2
+Chaetodon reticulatus,Carnivore,Corallivore,18,2
+Chaetodon trifascialis,Carnivore,Corallivore,18,2
+Chaetodon ulietensis,Carnivore,Invertivore,15,2
+Chaetodon unimaculatus,Carnivore,Corallivore,20,2
+Chaetodon vagabundus,Carnivore,Corallivore,23,2
+Forcipiger flavissimus,Carnivore,Invertivore,22,2
+Forcipiger longirostris,Carnivore,Invertivore,22,2
+Hemitaurichthys polylepis,Planktivore,Diurnal planktivore,18,3
+Hemitaurichthys thompsoni,Planktivore,Diurnal planktivore,21,5
+Heniochus chrysostomus,Carnivore,Corallivore,18,2
+Heniochus diphreutes,Planktivore,Diurnal planktivore,20,4
+Heniochus monoceros,Carnivore,Invertivore,23,2
+Heniochus varius,Carnivore,Corallivore,19,2
+Chanos chanos,Herbivore/Planktivore,Grazer/,180,5
+,,Diurnal planktivore,,
+Goniistius vittatus,Carnivore,Invertivore,41,1
+Cirrhitichthys falco,Carnivore,Diurnal piscivore,9,2
+Cirrhitichthys oxycephalus,Carnivore,Diurnal piscivore,12,3
+Cirrhitops fasciatus,Carnivore,Invertivore,12,1
+Cirrhitops hubbardi,Carnivore,Diurnal piscivore,7.5,1
+Cirrhitus pinnulatus,Carnivore,Invertivore,30,1
+Neocirrhites armatus,Carnivore,Diurnal piscivore,9,2
+Paracirrhites arcatus,Carnivore,Generalist carnivore,14,1
+Paracirrhites forsteri,Carnivore,Generalist carnivore,23,1
+Paracirrhites hemistictus,Carnivore,Diurnal piscivore,28,1
+Paracirrhites xanthus,Carnivore,Diurnal piscivore,11,1
+Spratelloides delicatulus,Planktivore,Diurnal planktivore,7,5
+Heterocongrinae sp.,Plantivore,Diurnal planktivore,66.7,4
+Taeniura meyeni,Carnivore,Invertivore,330,1
+Dasyatidae sp.,Carnivore,Invertivore,11.6,4
+Diodon holocanthus,Carnivore,Invertivore,38,1
+Diodon hystrix,Carnivore,Invertivore,91,1
+Encrasicholina purpurea,Planktivore,Diurnal planktivore,8,5
+Fistularia commersonii,Carnivore,Diurnal piscivore,160,3
+Nebrius ferrugineus,Carnivore,Nocturnal piscivore,320,3
+Amblyeleotris fasciata,Planktivore,Diurnal planktivore,8,2
+Valenciennea strigata,Carnivore,Invertivore,16,2
+Gobiidae sp.,Planktivore,Diurnal planktivore,7.2,3
+Plectorhinchus picus,Carnivore,Invertivore,85,1
+Myripristinae sp.,Planktivore,Nocturnal planktivore,24,3
+Myripristis adusta,Planktivore,Nocturnal planktivore,32,3
+Myripristis amaena,Planktivore,Nocturnal planktivore,32,3
+Myripristis berndti,Planktivore,Nocturnal planktivore,33,3
+Myripristis chryseres,Planktivore,Nocturnal planktivore,25,3
+Myripristis earlei,Planktivore,Nocturnal planktivore,24,3
+Myripristis kuntee,Planktivore,Nocturnal planktivore,23,3
+Myripristis murdjan,Planktivore,Nocturnal planktivore,60,3
+Myripristis vittata,Planktivore,Nocturnal planktivore,20,3
+Myripristis woodsi,Planktivore,Nocturnal planktivore,25,3
+Neoniphon argenteus,Carnivore,Invertivore,18.2,3
+Neoniphon aurolineatus,Carnivore,Invertivore,22,3
+Neoniphon opercularis,Carnivore,Invertivore,35,3
+Neoniphon sammara,Carnivore,Invertivore,32,3
+Neoniphon sp.,Carnivore,Invertivore,35,3
+Sargocentron caudimaculatum,Carnivore,Invertivore,25,3
+Sargocentron diadema,Carnivore,Invertivore,17,3
+Sargocentron microstoma,Carnivore,Invertivore,20,3
+Sargocentron punctatissimum,Carnivore,Invertivore,13,3
+Sargocentron spiniferum,Carnivore,Invertivore,52,3
+Sargocentron tiere,Carnivore,Invertivore,33,3
+Sargocentron xantherythrum,Carnivore,Invertivore,17,3
+Sargocentron sp.,Carnivore,Invertivore,50,3
+Kyphosus cinerascens,Herbivore,Browser,51,4
+Kyphosus hawaiiensis,Herbivore,Browser,41,4
+Kyphosus sandwicensis,Herbivore,Browser,75,4
+Kyphosus vaigiensis,Herbivore,Browser,60,4
+Kyphosus sp.,Herbivore,Browser,60.4,4
+Anampses caeruleopunctatus,Carnivore,Invertivore,42,2
+Anampses chrysocephalus,Carnivore,Invertivore,20,3
+Anampses cuvier,Carnivore,Invertivore,36,3
+Anampses melanurus,Carnivore,Invertivore,12,2
+Anampses meleagrides,Carnivore,Invertivore,22,2
+Anampses twistii,Carnivore,Invertivore,18,1
+Anampses sp.,Carnivore,Invertivore,20,2
+Bodianus anthioides,Carnivore,Invertivore,21,1
+Bodianus axillaris,Carnivore,Invertivore,20,2
+Bodianus bilunulatus,Carnivore,Invertivore,55,1
+Bodianus diana,Carnivore,Invertivore,25,2
+Bodianus loxozonus,Carnivore,Invertivore,40,2
+Bodianus mesothorax,Carnivore,Invertivore,19,2
+Bodianus prognathus,Carnivore,Invertivore,20,2
+Cheilinus chlorourus,Carnivore,Invertivore,32,2
+Cheilinus fasciatus,Carnivore,Invertivore,36,2
+Cheilinus oxycephalus,Carnivore,Invertivore,17,2
+Cheilinus trilobatus,Carnivore,Invertivore,45,1
+Cheilinus undulatus,Carnivore,Invertivore,229,1
+Cheilinus sp.,Carnivore,Invertivore,71.8,1
+Cirrhilabrus exquisitus,Planktivore,Diurnal planktivore,12,4
+Cirrhilabrus jordani,Planktivore,Diurnal planktivore,10,4
+Cirrhilabrus katherinae,Planktivore,Diurnal planktivore,9,4
+Cirrhilabrus sp.,Planktivore,Diurnal planktivore,15,4
+Coris aygula,Carnivore,Invertivore,120,1
+Coris ballieui,Carnivore,Invertivore,30,1
+Coris centralis,Carnivore,Invertivore,15,1
+Coris flavovittata,Carnivore,Invertivore,65,3
+Coris gaimard,Carnivore,Invertivore,40,1
+Coris venusta,Carnivore,Invertivore,20,1
+Epibulus insidiator,Carnivore,Generalist carnivore,54,1
+Gomphosus varius,Carnivore,Generalist carnivore,32,1
+Halichoeres biocellatus,Carnivore,Invertivore,12,3
+Halichoeres hortulanus,Carnivore,Invertivore,27,3
+Halichoeres margaritaceus,Carnivore,Invertivore,13,3
+Halichoeres marginatus,Carnivore,Invertivore,18,3
+Halichoeres melasmapomus,Carnivore,Invertivore,14,3
+Halichoeres ornatissimus,Carnivore,Invertivore,15,3
+Halichoeres trimaculatus,Carnivore,Invertivore,27,3
+Halichoeres sp.,Carnivore,Invertivore,19.3,3
+Hemigymnus fasciatus,Carnivore,Invertivore,50,1
+Hemigymnus melapterus,Carnivore,Invertivore,60,1
+Hologymnosus annulatus,Carnivore,Diurnal piscivore,40,1
+Hologymnosus doliatus,Carnivore,Generalist carnivore,40,3
+Labrichthys unilineatus,Carnivore,Corallivore,16,1
+Labroides bicolor,Carnivore,Ectoparasites,14,2
+Labroides dimidiatus,Carnivore,Ectoparasites,12,2
+Labroides pectoralis,Carnivore,Ectoparasites,8,2
+Labroides phthirophagus,Carnivore,Ectoparasites,10,2
+Labroides rubrolabiatus,Carnivore,Ectoparasites,9,2
+Labropsis xanthonota,Carnivore,Corallivore,14,3
+Macropharyngodon geoffroy,Carnivore,Invertivore,16,3
+Macropharyngodon meleagris,Carnivore,Invertivore,15,3
+Novaculichthys taeniourus,Carnivore,Invertivore,30,2
+Oxycheilinus bimaculatus,Carnivore,Invertivore,15,1
+Oxycheilinus digramma,Carnivore,Diurnal piscivore,30,1
+Oxycheilinus unifasciatus,Carnivore,Diurnal piscivore,46,1
+Oxycheilinus sp.,Carnivore,Diurnal piscivore,27.8,1
+Pseudocheilinus evanidus,Carnivore,Generalist carnivore,14,1
+Pseudocheilinus hexataenia,Carnivore,Invertivore,8,3
+Pseudocheilinus ocellatus,Carnivore,Invertivore,10.5,1
+Pseudocheilinus octotaenia,Carnivore,Invertivore,14,3
+Pseudocheilinus tetrataenia,Carnivore,Invertivore,8,3
+Pseudocoris aurantiofasciata,Planktivore,Diurnal planktivore,20,3
+Pseudocoris heteroptera,Planktivore,Diurnal planktivore,20,4
+Pseudocoris yamashiroi,Planktivore,Diurnal planktivore,16,4
+Pseudodax moluccanus,Omnivore,Benthic omnivore,26,1
+Pseudojuloides atavai,Carnivore,Invertivore,13,3
+Pseudojuloides cerasinus,Carnivore,Invertivore,12,3
+Stethojulis balteata,Carnivore,Invertivore,15,3
+Stethojulis bandanensis,Carnivore,Invertivore,16,3
+Stethojulis strigiventer,Carnivore,Invertivore,15,3
+Thalassoma amblycephalum,Planktivore,Diurnal planktivore,15,3
+Thalassoma ballieui,Carnivore,Generalist carnivore,43,3
+Thalassoma duperrey,Carnivore,Generalist carnivore,26,3
+Thalassoma hardwicke,Carnivore,Invertivore,20,3
+Thalassoma lunare,Carnivore,Invertivore,25,3
+Thalassoma lutescens,Carnivore,Invertivore,25,3
+Thalassoma purpureum,Carnivore,Generalist carnivore,43,3
+Thalassoma quinquevittatum,Carnivore,Invertivore,17,3
+Thalassoma trilobatum,Carnivore,Invertivore,33,3
+Thalassoma sp.,Carnivore,Invertivore,17.6,3
+Labridae sp.,Carnivore,Invertivore,26.8,3
+Gnathodentex aureolineatus,Carnivore,Invertivore,30,5
+Lethrinus harak,Carnivore,Invertivore,32,3
+Lethrinus obsoletus,Carnivore,Invertivore,50,3
+Lethrinus olivaceus,Carnivore,Generalist carnivore,100,4
+Lethrinus rubrioperculatus,Carnivore,Diurnal piscivore,39.5,4
+Lethrinus xanthochilus,Carnivore,Generalist carnivore,62,1
+Lethrinus sp.,Carnivore,Generalist carnivore,86,4
+Monotaxis grandoculis,Carnivore,Invertivore,63,4
+Aphareus furca,Carnivore,Nocturnal piscivore,70,3
+Aprion virescens,Carnivore,Nocturnal piscivore,112,3
+Lutjanus bohar,Carnivore,Nocturnal piscivore,90,4
+Lutjanus fulvus,Carnivore,Generalist carnivore,43,3
+Lutjanus gibbus,Carnivore,Generalist carnivore,53,4
+Lutjanus kasmira,Carnivore,Invertivore,40,5
+Lutjanus monostigma,Carnivore,Nocturnal piscivore,60,3
+Lutjanus semicinctus,Carnivore,Generalist carnivore,35,3
+Macolor macularis,Planktivore,Nocturnal planktivore,60,4
+Macolor niger,Planktivore,Nocturnal planktivore,75,4
+Malacanthus brevirostris,Carnivore,Invertivore,30,2
+Malacanthus latovittatus,Carnivore,Invertivore,45,2
+Gunnellichthys curiosus,Planktivore,Diurnal planktivore,12,2
+Microdesmidae sp.,Planktivore,Diurnal planktivore,9.7,3
+Manta birostris,Planktivore,Diurnal planktivore,800,1
+Aluterus scriptus,Omnivore,Benthic omnivore,76,1
+Amanses scopas,Carnivore,Corallivore,20,1
+Cantherhines dumerilii,Carnivore,Corallivore,38,2
+Cantherhines pardalis,Carnivore,Invertivore,25,1
+Cantherhines sandwichiensis,Herbivore,Grazer,20,1
+Cantherhines verecundus,Omnivore,Benthic omnivore,16,1
+Pervagor aspricaudus,Omnivore,Benthic omnivore,14,1
+Pervagor janthinosoma,Omnivore,Benthic omnivore,13.5,2
+Pervagor marginalis,Omnivore,Benthic omnivore,8.2,2
+Pervagor melanocephalus,Omnivore,Benthic omnivore,10,2
+Pervagor spilosoma,Omnivore,Benthic omnivore,18,2
+Pervagor sp.,Omnivore,Benthic omnivore,18,2
+Monacanthidae sp.,Omnivore,Benthic omnivore,21.2,2
+Mulloidichthys flavolineatus,Carnivore,Invertivore,40,4
+Mulloidichthys mimicus,Carnivore,Invertivore,30,3
+Mulloidichthys vanicolensis,Carnivore,Invertivore,38,4
+Parupeneus barberinus,Carnivore,Invertivore,50,2
+Parupeneus chrysonemus,Carnivore,Invertivore,22,3
+Parupeneus cyclostomus,Carnivore,Diurnal piscivore,50,1
+Parupeneus insularis,Carnivore,Invertivore,33,3
+Parupeneus multifasciatus,Carnivore,Invertivore,38,3
+Parupeneus pleurostigma,Carnivore,Invertivore,33,3
+Parupeneus porphyreus,Carnivore,Invertivore,51,3
+Mullidae sp.,Carnivore,Invertivore,39,3
+Echidna nebulosa,Carnivore,Invertivore,75,1
+Gymnothorax breedeni,Carnivore,Nocturnal piscivore,75,1
+Gymnothorax eurostus,Carnivore,Generalist carnivore,60,1
+Gymnothorax flavimarginatus,Carnivore,Nocturnal piscivore,240,1
+Gymnothorax javanicus,Carnivore,Nocturnal piscivore,300,1
+Gymnothorax meleagris,Carnivore,Nocturnal piscivore,120,1
+Gymnothorax undulatus,Carnivore,Nocturnal piscivore,150,1
+Gymnothorax sp.,Carnivore,Nocturnal piscivore,300,1
+Muraenidae sp.,Carnivore,Nocturnal piscivore,149.2,1
+Aetobatus narinari,Carnivore,Invertivore,350,1
+Oplegnathus fasciatus,Carnivore,Invertivore,80,3
+Oplegnathus punctatus,Carnivore,Invertivore,86,3
+Ostracion cubicus,Omnivore,Benthic omnivore,45,1
+Ostracion meleagris,Omnivore,Benthic omnivore,28,1
+Ostracion whitleyi,Omnivore,Benthic omnivore,16,1
+Ostraciidae sp.,Omnivore,Benthic omnivore,25.8,1
+Pempheris oualensis,Planktivore,Nocturnal planktivore,23,4
+Parapercis clathrata,Carnivore,Generalist carnivore,18,1
+Parapercis millepunctata,Carnivore,Generalist carnivore,19,1
+Parapercis schauinslandii,Carnivore,Generalist carnivore,18,1
+Pinguipedidae sp.,Carnivore,Generalist carnivore,18.4,1
+Apolemichthys arcuatus,Carnivore,Invertivore,18,3
+Apolemichthys griffisi,Carnivore,Invertivore,25,3
+Apolemichthys trimaculatus,Carnivore,Invertivore,25,3
+Apolemichthys xanthopunctatus,Carnivore,Invertivore,25,3
+Centropyge bicolor,Herbivore,Grazer,15,2
+Centropyge bispinosa,Herbivore,Grazer,10,3
+Centropyge fisheri,Herbivore,Grazer,7.5,3
+Centropyge flavissima,Herbivore,Grazer,14,3
+Centropyge heraldi,Herbivore,Grazer,10,3
+Centropyge interruptus,Herbivore,Grazer,16,2
+Centropyge loricula,Herbivore,Grazer,10,3
+Centropyge multifasciata,Herbivore,Grazer,10,2
+Centropyge potteri,Herbivore,Grazer,12.7,2
+Centropyge shepardi,Herbivore,Grazer,9,3
+Centropyge vrolikii,Herbivore,Grazer,12,3
+Genicanthus personatus,Planktivore,Diurnal planktivore,25,3
+Genicanthus watanabei,Planktivore,Diurnal planktivore,15,3
+Pomacanthus imperator,Omnivore,Benthic omnivore,38,2
+Pygoplites diacanthus,Omnivore,Benthic omnivore,25,2
+Abudefduf abdominalis,Planktivore,Diurnal planktivore,25,4
+Abudefduf septemfasciatus,Omnivore,Benthic omnivore,23,4
+Abudefduf sexfasciatus,Planktivore,Diurnal planktivore,15,4
+Abudefduf sordidus,Omnivore,Benthic omnivore,24,4
+Abudefduf vaigiensis,Planktivore,Diurnal planktivore,20,4
+Amphiprion chrysopterus,Planktivore,Diurnal planktivore,17,3
+Amphiprion clarkii,Planktivore,Diurnal planktivore,14,3
+Amphiprion melanopus,Planktivore,Diurnal planktivore,10.8,3
+Amphiprion perideraion,Omnivore,Pelagic omnivore,10,3
+Chromis acares,Planktivore,Diurnal planktivore,6,4
+Chromis agilis,Planktivore,Diurnal planktivore,11,4
+Chromis alpha,Planktivore,Diurnal planktivore,8.5,4
+Chromis amboinensis,Planktivore,Diurnal planktivore,8,4
+Chromis hanui,Planktivore,Diurnal planktivore,9,3
+Chromis iomelas,Planktivore,Diurnal planktivore,8,4
+Chromis lepidolepis,Planktivore,Diurnal planktivore,8,4
+Chromis margaritifer,Planktivore,Diurnal planktivore,8,4
+Chromis ovalis,Planktivore,Diurnal planktivore,19,3
+Chromis ternatensis,Planktivore,Diurnal planktivore,8,4
+Chromis vanderbilti,Planktivore,Diurnal planktivore,15,5
+Chromis verater,Planktivore,Diurnal planktivore,22,5
+Chromis viridis,Planktivore,Diurnal planktivore,8,5
+Chromis weberi,Planktivore,Diurnal planktivore,12,4
+Chromis xanthura,Planktivore,Diurnal planktivore,15,5
+Chrysiptera brownriggii,Omnivore,Benthic omnivore,9,3
+Chrysiptera taupou,Omnivore,Omnivorous planktivore,8,3
+Chrysiptera traceyi,Omnivore,Omnivorous planktivore,4.5,3
+Dascyllus albisella,Omnivore,Diurnal planktivore,12,4
+Dascyllus aruanus,Planktivore,Diurnal planktivore,8,4
+Dascyllus auripinnis,Planktivore,Diurnal planktivore,16,4
+Dascyllus reticulatus,Planktivore,Diurnal planktivore,8,4
+Dascyllus trimaculatus,Planktivore,Diurnal planktivore,14,3
+Lepidozygus tapeinosoma,Planktivore,Diurnal planktivore,10,5
+Neopomacentrus metallicus,Planktivore,Diurnal planktivore,8,5
+Plectroglyphidodon dickii,Omnivore,Herbivore/Corallivore,11,1
+Plectroglyphidodon imparipennis,Planktivore,Diurnal planktivore,6,1
+Plectroglyphidodon johnstonianus,Carnivore,Corallivore,12,1
+Plectroglyphidodon lacrymatus,Herbivore,Grazer,10,1
+Plectroglyphidodon phoenixensis,Herbivore,Grazer,8.5,1
+Pomacentrus brachialis,Omnivore,Grazer/Diurnal planktivore,10,4
+Pomacentrus coelestis,Planktivore,Diurnal planktivore,7,4
+Pomacentrus philippinus,Planktivore,Diurnal planktivore,10.9,4
+Pomacentrus vaiuli,Omnivore,Grazer/Diurnal planktivore,10,3
+Pomachromis guamensis,Planktivore,Diurnal planktivore,6,4
+Pomachromis richardsoni,Planktivore,Diurnal planktivore,6,4
+Stegastes albifasciatus,Herbivore,Grazer,11,3
+Stegastes aureus,Herbivore,Grazer,11,3
+Stegastes fasciolatus,Herbivore,Grazer,16,3
+Stegastes lividus,Herbivore,Grazer,10.9,3
+Stegastes nigricans,Herbivore,Grazer,14,4
+Stegastes sp.,Herbivore,Grazer,15.5,3
+Pomacentridae sp.,Planktivore,Diurnal planktivore,11.4,4
+Heteropriacanthus cruentatus,Planktivore,Nocturnal planktivore,32,3
+Priacanthus meeki,Planktivore,Nocturnal planktivore,33,1
+Priacanthus sp.,Planktivore,Nocturnal planktivore,38,1
+Nemateleotris helfrichi,Planktivore,Diurnal planktivore,6.3,2
+Nemateleotris magnifica,Planktivore,Diurnal planktivore,9,2
+Ptereleotris evides,Planktivore,Diurnal planktivore,18,4
+Ptereleotris heteroptera,Planktivore,Diurnal planktivore,12,4
+Ptereleotris microlepis,Planktivore,Diurnal planktivore,13,4
+Ptereleotris zebra,Planktivore,Diurnal planktivore,12,4
+Calotomus carolinus,Herbivore,Scraper,54,3
+Calotomus zonarchus,Herbivore,Scraper,30,3
+Cetoscarus ocellatus,Herbivore,Excavator,90,3
+Chlorurus frontalis,Herbivore,Excavator,50,3
+Chlorurus japanensis,Herbivore,Excavator,31,3
+Chlorurus microrhinos,Herbivore,Excavator,80,3
+Chlorurus perspicillatus,Herbivore,Excavator,62,3
+Chlorurus sordidus,Herbivore,Excavator,40,3
+Hipposcarus longiceps,Herbivore,Scraper,60,4
+Scarus altipinnis,Herbivore,Scraper,60,5
+Scarus dubius,Herbivore,Scraper,38,3
+Scarus festivus,Herbivore,Scraper,45,3
+Scarus forsteni,Herbivore,Scraper,55,1
+Scarus frenatus,Herbivore,Scraper,47,3
+Scarus ghobban,Herbivore,Scraper,90,3
+Scarus globiceps,Herbivore,Scraper,31,3
+Scarus niger,Herbivore,Scraper,43,1
+Scarus oviceps,Herbivore,Scraper,38,1
+Scarus psittacus,Herbivore,Scraper,33,4
+Scarus rubroviolaceus,Herbivore,Scraper,70,3
+Scarus schlegeli,Herbivore,Scraper,38,4
+Scarus spinus,Herbivore,Scraper,31,3
+Scarus tricolor,Herbivore,Scraper,55,1
+Scarus xanthopleura,Herbivore,Scraper,55,1
+Scarus sp.,Herbivore,Scraper,130,3
+Scaridae sp.,Herbivore,Scraper,57.3,3
+Euthynnus affinis,Carnivore,Diurnal piscivore,100,5
+Gymnosarda unicolor,Carnivore,Diurnal piscivore,248,1
+Thunnus albacares,Carnivore,Generalist carnivore,210,4
+Pterois antennata,Carnivore,Generalist carnivore,20,1
+Pterois sphex,Carnivore,Generalist carnivore,22,1
+Pterois volitans,Carnivore,Generalist carnivore,38,1
+Scorpaenopsis cacopsis,Carnivore,Generalist carnivore,51,1
+Scorpaenopsis diabolus,Carnivore,Generalist carnivore,30,1
+Scorpaenopsis sp.,Carnivore,Generalist carnivore,30,1
+Sebastapistes coniorta,Carnivore,Generalist carnivore,10,1
+Sebastapistes cyanostigma,Carnivore,Generalist carnivore,7,1
+Aethaloperca rogaa,Carnivore,Diurnal piscivore,60,1
+Anthias sp.,Planktivore,Diurnal planktivore,14,3
+Cephalopholis argus,Carnivore,Diurnal piscivore,60,1
+Cephalopholis leopardus,Carnivore,Diurnal piscivore,20,1
+Cephalopholis miniata,Carnivore,Diurnal piscivore,45,1
+Cephalopholis sexmaculata,Carnivore,Generalist carnivore,50,1
+Cephalopholis sonnerati,Carnivore,Diurnal piscivore,50,1
+Cephalopholis spiloparaea,Carnivore,Diurnal piscivore,30,1
+Cephalopholis urodeta,Carnivore,Generalist carnivore,28,1
+Cephalopholis sp.,Carnivore,Diurnal piscivore,60,1
+Epinephelus fasciatus,Carnivore,Diurnal piscivore,43,1
+Epinephelus hexagonatus,Carnivore,Diurnal piscivore,26,1
+Epinephelus howlandi,Carnivore,Diurnal piscivore,55,1
+Epinephelus macrospilos,Carnivore,Diurnal piscivore,51,1
+Epinephelus maculatus,Carnivore,Diurnal piscivore,60,1
+Epinephelus melanostigma,Carnivore,Diurnal piscivore,33,1
+Epinephelus merra,Carnivore,Diurnal piscivore,33,1
+Epinephelus polyphekadion,Carnivore,Diurnal piscivore,75,1
+Epinephelus retouti,Carnivore,Diurnal piscivore,47,1
+Epinephelus spilotoceps,Carnivore,Diurnal piscivore,35,1
+Epinephelus tauvina,Carnivore,Diurnal piscivore,75,1
+Epinephelus sp.,Carnivore,Diurnal piscivore,128,1
+Gracila albomarginata,Carnivore,Diurnal piscivore,50,1
+Grammistes sexlineatus,Carnivore,Diurnal piscivore,27,1
+Luzonichthys whitleyi,Planktivore,Diurnal planktivore,6,5
+Pogonoperca punctata,Carnivore,Diurnal piscivore,35,1
+Pseudanthias bartlettorum,Planktivore,Diurnal planktivore,9,5
+Pseudanthias bicolor,Planktivore,Diurnal planktivore,13,3
+Pseudanthias cooperi,Planktivore,Diurnal planktivore,14,3
+Pseudanthias dispar,Planktivore,Diurnal planktivore,10,5
+Pseudanthias olivaceus,Planktivore,Diurnal planktivore,12,5
+Pseudanthias pascalus,Planktivore,Diurnal planktivore,17,5
+Pseudanthias thompsoni,Planktivore,Diurnal planktivore,22,5
+Pseudanthias ventralis hawaiiensis,Planktivore,Diurnal planktivore,10,5
+Variola louti,Carnivore,Diurnal piscivore,83,3
+Serranidae sp.,Carnivore,Diurnal piscivore,45.2,1
+Sphyraena barracuda,Carnivore,Piscivore,200,3
+Sphyraena helleri,Carnivore,Nocturnal piscivore,80,4
+Sphyraena qenie,Carnivore,Nocturnal piscivore,170,4
+Sphyrna lewini,Carnivore,Nocturnal piscivore,400,4
+Sphyrnidae sp.,Carnivore,Nocturnal piscivore,150,4
+Synodus binotatus,Carnivore,Diurnal piscivore,17,1
+Synodus dermatogenys,Carnivore,Diurnal piscivore,24,1
+Synodus ulae,Carnivore,Diurnal piscivore,30,1
+Syngnathidae sp.,Planktivore,Diurnal planktivore,9.5,1
+Arothron hispidus,Omnivore,Benthic omnivore,52,1
+Arothron meleagris,Carnivore,Corallivore,50,1
+Arothron nigropunctatus,Carnivore,Corallivore,33,2
+Canthigaster amboinensis,Omnivore,Benthic omnivore,14,1
+Canthigaster coronata,Omnivore,Benthic omnivore,14,2
+Canthigaster jactator,Omnivore,Benthic omnivore,9,2
+Canthigaster janthinoptera,Omnivore,Benthic omnivore,9,2
+Canthigaster rivulata,Omnivore,Benthic omnivore,18,2
+Canthigaster solandri,Omnivore,Benthic omnivore,11,2
+Canthigaster valentini,Omnivore,Benthic omnivore,9,2
+Tetraodontidae sp.,Omnivore,Benthic omnivore,28.5,2
+Zanclus cornutus,Omnivore,Benthic omnivore,20,3
