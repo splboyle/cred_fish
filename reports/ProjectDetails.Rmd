@@ -1,0 +1,50 @@
+---
+title: "Project Details"
+author: "Shannon Boyle"
+output: html_document
+---
+
+#### What is the role of environmental variables in shaping fish community composition at the site-level?
+
+- How much variation in fish assemblage is explained by environmental variables?   
+-- I expect more of the variation in species with more specific habitat requirements to be explained than more generalist groups. For example, a higher proportion of biomass of corallivores or other benthic/reef-associated species will be explained compared to less specific species.   
+-- Likely that predictive performance is moderate due to chance events (Pitcher et al. 2012). E.g. sampling variability, diurnal, tidal, seasonal, other ecological processes, etc.   
+
+#### What is the relative importance of environmental variables in explaining variation in fish assemblage?
+
+- Does the relative importance of environmental variables differ across various scales (*i.e.*, local/site, intra-island, inter-island, regionally)?  
+- Do regional scale characteristics (*i.e.*, chl-a, temperature, etc.) or site-level characterisitics (*i.e.*, benthic cover, wave energy, etc.) explain more of the variation in the fish community? 
+
+#### Is the shape of responses along these environmental gradiets similar at similar islands? (*I.e.*, will the response at Howland and Baker be more similar than between more dissimilar islands?) 
+
+
+
+
+To what extent can these environmental variables be used to predict the fish community across space? 
+
+Objectives (Pitcher et al. 2012)    
+- Quantify overall extent to which environmental variables can predict distribution patterns  
+- Quantify importance of each variable to the predictions  
+- GF explores the empirical shape and magnitude of changes in composition along environmental gradients  
+- Identifies any critical values along these gradients that correspond to threshold changes in composition
+
+##### Gradient Forest  
+First, an ensemble of regression tree models are fit between individual species abundnace and environmental variables. From these, Gradient Forest accumulates standardized measures of species changes along the gradients for multiple species and uses them to build empirical nonlinear functions of compositional change for each variable.  
+- Goal: contrasting and interpreting compositional responses along environmental gradients across regions 
+
+
+
+At the small-scale, site level, I'm interested in what the primary environmental drivers of fish assemblage are. 
+I'm defining fish assemblage by the biomass of various functional groups based on their diet, habitat preferenes, and general behavior. 
+
+The primary broad pattern I expect to see is the difference between shallow, site-associated species and larger, roving pelagic species such as planktivores and piscivores. 
+
+I'm very interested in the difference between the islands or island groups. Is 
+
+
+
+Whats unique about these islands - abundance and biomass of top predators
+- Ok so can I look at the the primary site level drivers of top predators across the islands? Is piscivore biomass always explained by the same variables across all islands or does it differ from Howland/Jarvis to Wake/Johnston - does the interaction of various environmental variables differ across oceanic regimes? 
+- Are these large predators driven, at the site-level, primarily by large scale oceanographic characteristics (chl-a, temp, etc.) or site level characteristics. 
+- Can we predict the biomass of these species across space? 
+

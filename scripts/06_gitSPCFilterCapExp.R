@@ -64,6 +64,10 @@ bak.pca <- prcomp(bak.bio, scaling = T)
 plot(bak.pca)
 biplot(bak.pca)
 
+b <- PCA(bak.bio, stand = T)
+
+
+
 #HOWLAND - remove MABI
 how.bio.matrix <- subset(island_bio.matrix, ISLAND == "Howland")
 how.bio <- how.bio.matrix[-c(1,2,386,651)]
@@ -126,7 +130,8 @@ biplot(wak.pca)
   biplot(d.pca)
   
   dev.off()
-} #Doesn't quite work... 
+  } 
+# Doesn't quite work... 
 
 ################################
 
@@ -145,5 +150,54 @@ for (i in wsd$ISLAND){
   dev.off()
   
   }
+
+
+ggplot(data = wsd, aes(x = ISLAND, y = TotFish)) +
+  geom_boxplot()
+
+ggplot(data = wsd, aes(x = ISLAND, y = rmMABI)) +
+  geom_boxplot() 
+
+b <- subset(wsd, ISLAND == "Baker")
+b <- subset(wsd, ISLAND == "Howland")
+b <- subset(wsd, ISLAND == "Jarvis")
+b <- subset(wsd, ISLAND == "Johnston")
+b <- subset(wsd, ISLAND == "Kingman")
+b <- subset(wsd, ISLAND == "Palmyra")
+b <- subset(wsd, ISLAND == "Wake")
+
+b <- data.frame(b$SITE, b$rmMABI)
+
+bx <- boxplot(b$b.rmMABI)
+bx$stats
+
+# BAKER boxplot stats - 6 outliers
+# [1,]   8.185154
+# [2,]  44.918691
+# [3,]  75.097054
+# [4,] 118.334215
+# [5,] 214.000100
+
+# HOWLAND boxplot stats - 3 outliers
+# [1,]  15.41959
+# [2,]  63.27150
+# [3,]  94.25418
+# [4,] 130.64459
+# [5,] 216.51090
+
+# JARVIS boxplot stats - 8 outliers
+# [1,]   5.459686
+# [2,]  77.868453
+# [3,] 112.704238
+# [4,] 156.278859
+# [5,] 262.738789
+
+# JOHNSTON boxplot stats - 8 outliers
+# [1,]  1.437525
+# [2,] 15.069649
+# [3,] 24.752408
+# [4,] 47.514122
+# [5,] 94.284919
+
 
 
