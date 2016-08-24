@@ -147,3 +147,11 @@ ggplot(wsd, aes(ISLAND, SECONDARY, fill = ISLAND)) +
 ggplot(wsd, aes(CCA, MA)) +
   geom_point() +
   geom_smooth(method = "lm", formula = y~x, na.rm = T)
+
+
+
+ggplot(data = subset(wsd, ISLAND == "Wake"), aes(x = SD_SH_DIFF, y = BOMU)) +
+  geom_point()
+
+
+
