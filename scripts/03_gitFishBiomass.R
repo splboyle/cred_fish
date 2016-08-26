@@ -6,7 +6,7 @@ setwd("/Users/ShanBam/GitHub/cred_fish")
 load("data/TMPwsd.Rdata")
 load("data/tmp_RAMP_BASICdata_pooled_island.rdata")
 load("data/tmp_RAMP_BASICdata_pooled_is_yr_RZ.rdata")
-consgrp_stack <- read.csv("data/working_data/consgrp_stack.csv")
+consgrp_stack <- read.csv("data/clean_data/clean_consgrp_stack.csv")
 islandmean <- read.csv("data/working_data/islandmean.csv")
 parrot_sum <- read.csv("data/working_data/dp_parrotfishSUM.csv")
 
@@ -20,6 +20,7 @@ st.err <- function(x, na.rm=FALSE) {
 }
 
 dp <- as.data.frame(dp)
+
 if (!require("RColorBrewer")) {
   install.packages("RColorBrewer")
   library(RColorBrewer)
@@ -29,7 +30,7 @@ cols <- brewer.pal(6,"RdYlGn")
 colorRampPalette(brewer.pal(6,"YlGn"))(6)
 
 # All fish across all pacific islands 
-ggplot(data = subset(dp, Mean.REEF_ZONE == "Forereef"), aes(x = reorder(Mean.ISLAND, -Mean.TotFish), y = Mean.TotFish, fill = Mean.REGION)) +
+ggplot(dp, aes(x = reorder(Mean.ISLAND, -Mean.TotFish), y = Mean.TotFish, fill = Mean.REGION)) +
   geom_bar(stat = "identity", col="black", size = .3) +
   geom_errorbar(aes(ymax = Mean.TotFish + PooledSE.TotFish, ymin=Mean.TotFish - PooledSE.TotFish), width = 0, size = .3) + 
   theme_bw() + 
@@ -70,19 +71,19 @@ for (i in unique(tot$island)){
 
 ###############################################
 ### Total fish biomass across all years faceted by island (TS bargraph)
-ggplot(subset(dp, Mean.REGION == "PRIAs" & Mean.REEF_ZONE == "Forereef"), aes(x = Mean.ANALYSIS_YEAR, y = Mean.TotFish, fill = Mean.ISLAND)) +
-  geom_bar(stat = "identity", col = "black", size = .25) +
-  geom_errorbar(aes(ymax = Mean.TotFish + PooledSE.TotFish, ymin=Mean.TotFish - PooledSE.TotFish), width = 0, size = .25) + 
+ggplot(data = subset(dp, Mean.ANALYSIS_YEAR != 2008), aes(x = Mean.ANALYSIS_YEAR, y = Mean.TotFish, fill = Mean.ISLAND)) +
+  geom_bar(stat = "identity", size = 0) +
+  geom_errorbar(aes(ymax = Mean.TotFish + PooledSE.TotFish, ymin=Mean.TotFish - PooledSE.TotFish), width = 0, size = .3) + 
   facet_grid(~Mean.ISLAND) +
   theme_bw() + 
   theme(axis.title.x = element_blank()) + 
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
   ggtitle("Total Fish Biomass Across the PRIMNM (2009-2015)") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
-  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  theme(axis.text.x=element_text(angle=50, hjust=1)) +
   theme(legend.position = "none") +
   theme(legend.title=element_blank())
-ggsave(file = "graphs_tables/AllFishSPC_IslandFacet.png") # doesn't work for some reason, saved manually
+ggsave(file = "graphs_tables/AllFishSPC_IslandFacet.png") 
 
 ###############################################
 ### Each island, total fish biomass faceted by consumer group, across all years (TS bargraph)
@@ -110,24 +111,24 @@ for (i in unique(all.groups$island)) {
 # Need errorbars
 selimits <- aes(ymax = All_TotFish + All_TotFishSE, ymin= All_TotFish - All_TotFishSE)
 
-ggplot(consgrp_stack, aes(x = year, y = TotFish, fill = group)) +
-  geom_bar(stat = "identity", col = "black", size = .3) +
-  geom_errorbar(selimits, width = 0, size = .25) +
+ggplot(data = subset(consgrp_stack, year != 2008), aes(x = year, y = TotFish, fill = group)) +
+  geom_bar(stat = "identity", size = 0) +
+  geom_errorbar(selimits, width = 0, size = .3) +
   facet_grid(.~island) +
   theme_bw() + 
   theme(axis.title.x = element_blank()) +
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
+  scale_x_continuous(breaks=c(2008,2010,2012,2014,2016))+
   ggtitle("Consumer Group Biomass Across the PRIMNM (2010-2015)") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
-  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  theme(axis.text.x=element_text(angle=50, hjust=1)) +
   theme(legend.position = "bottom") +
   theme(legend.title=element_blank()) 
 
-ggsave("graphs_tables/StackedConsumerGroup_IslandFacet_lowres.png")
-ggsave("graphs_tables/StackedConsumerGroup_IslandFacet.png", dpi = 1200) # must be last plot 
+ggsave("graphs_tables/clean_data_plots/StackedConsumerGroup_IslandFacet_lowres.png")
+ggsave("graphs_tables/clean_data_plots/StackedConsumerGroup_IslandFacet.png", dpi = 1200) # must be last plot 
 
-### How do I add the error bar for the total mean? Its in a different dataframe...
-### How do I change the stack order of the groups - i.e., I want Planktivores or Piscivores (or Herbivores) on the bottom
+
 
 ### Total fish biomass (mean of all years combined) for each island stacked by consumer group
 limits <- aes(ymax = allF + allFSE, ymin= allF - allFSE)
