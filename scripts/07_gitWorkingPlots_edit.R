@@ -38,13 +38,16 @@ ggplot(data = tow_familygrp_forplot, aes(x = YEAR, y = TotFish, fill = group)) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   theme(axis.text.x=element_text(angle=90, hjust=1)) +
   theme(legend.position = "bottom") +
-  scale_fill_manual(values=c("#6a3d9a", "#cab2d6", "#ffff99", "#e31a1c",  "#b15928", "gray55", "#33a02c", "#1f78b4", "#ff7f00", "#b2df8a", "#fb6a4a", "#fdbf6f", "#a6cee3")) + 
+  scale_fill_manual(values=c("#fb6a4a", "#238b45", "#cb181d", "#d94701",  "#6a51a3",  "gray55", "#6baed6", "#74c476", "#2171b5", "#fd8d3c", "#9e9ac8", "#bdd7e7", "#bae4b3", "#fcae91")) + 
   theme(legend.title=element_blank()) 
-ggsave("graphs_tables/clean_data_plots/Tow_FamilyStack_byYear_PRIM.png")
+
+ggsave("graphs_tables/clean_data_plots/Tow_FamilyStack_byYear_PRIM.png", dpi = 1200)
+ggsave("graphs_tables/clean_data_plots/Tow_FamilyStack_byYear_PRIM_lowres.png")  
+
 
 display.brewer.all()
 cols <- brewer.pal(6,"RdYlGn")
-colorRampPalette(brewer.pal(6,"Dark2"))(13)
+colorRampPalette(brewer.pal(6,"Dark2"))(14)
 install.packages("colorspace")
 rainbow_hcl(13)
 
@@ -62,7 +65,7 @@ for (i in unique(tow_familygrp_forplot$ISLAND)) {
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
     theme(axis.text.x=element_text(angle=50, hjust=1)) +
     theme(legend.position = "bottom") +
-    scale_fill_manual(values=c("#6a3d9a", "#cab2d6", "#ffff99", "#e31a1c",  "#b15928", "gray55", "#33a02c", "#1f78b4", "#ff7f00", "#b2df8a", "#fb6a4a", "#fdbf6f", "#a6cee3")) +
+    scale_fill_manual(values=c("#fb6a4a", "#238b45", "#cb181d", "#d94701",  "#6a51a3",  "gray55", "#6baed6", "#74c476", "#2171b5", "#fd8d3c", "#9e9ac8", "#bdd7e7", "#bae4b3", "#fcae91")) +
     theme(legend.title=element_blank()) 
   print(tt.p)
   ggsave(tt.p,filename=paste("Tow_year_at",i,".png",sep="_"), path = "graphs_tables/clean_data_plots/still_working")

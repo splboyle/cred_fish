@@ -30,8 +30,8 @@ cols <- brewer.pal(6,"RdYlGn")
 colorRampPalette(brewer.pal(6,"YlGn"))(6)
 
 # All fish across all pacific islands 
-ggplot(dp, aes(x = reorder(Mean.ISLAND, -Mean.TotFish), y = Mean.TotFish, fill = Mean.REGION)) +
-  geom_bar(stat = "identity", col="black", size = .3) +
+ggplot(dpall, aes(x = reorder(Mean.ISLAND, -Mean.TotFish), y = Mean.TotFish, fill = Mean.REGION)) +
+  geom_bar(stat = "identity") +
   geom_errorbar(aes(ymax = Mean.TotFish + PooledSE.TotFish, ymin=Mean.TotFish - PooledSE.TotFish), width = 0, size = .3) + 
   theme_bw() + 
   theme(axis.title.x = element_blank()) + 
@@ -42,9 +42,7 @@ ggplot(dp, aes(x = reorder(Mean.ISLAND, -Mean.TotFish), y = Mean.TotFish, fill =
   theme(axis.text.x=element_text(angle=50, hjust=1))+
   theme(legend.position = "bottom") +
   theme(legend.title=element_blank()) +
-  #scale_fill_manual(values=c("#EDF8E9", "#CEECC8", "#ABDDA6", "#81CA82", "#53AD62", "#238B45")) +
   scale_fill_manual(values=c("#D9F0A3", "#ADDD8E", "#980043" ,  "#78C679", "#31A354", "#006837"))
-  #scale_fill_manual(values=c("#EFF3FF", "#C6DBEF", "#9ECAE1", "#6BAED6", "#3182BD", "#08519C"))
 ggsave(file = "graphs_tables/TotFishSPC_AllIslands.png")
 
 
@@ -108,7 +106,9 @@ for (i in unique(all.groups$island)) {
 
 ###############################################
 ### Total fish biomass stacked by consumer group, faceted by island across all years (TS bargraph)
-# Need errorbars
+##################### ##################### 
+# Need to change the order of legend items 
+##################### ##################### 
 selimits <- aes(ymax = All_TotFish + All_TotFishSE, ymin= All_TotFish - All_TotFishSE)
 
 ggplot(data = subset(consgrp_stack, year != 2008), aes(x = year, y = TotFish, fill = group)) +
@@ -119,14 +119,18 @@ ggplot(data = subset(consgrp_stack, year != 2008), aes(x = year, y = TotFish, fi
   theme(axis.title.x = element_blank()) +
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
   scale_x_continuous(breaks=c(2008,2010,2012,2014,2016))+
-  ggtitle("Consumer Group Biomass Across the PRIMNM (2010-2015)") +
+  ggtitle("Consumer Group Biomass Across the PRIMNM (2010-2016)") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
-  theme(axis.text.x=element_text(angle=50, hjust=1)) +
+  theme(axis.text.x=element_text(angle=90, hjust=1)) +
   theme(legend.position = "bottom") +
+  scale_fill_manual(values=c("royalblue", "coral2", "springgreen3",  "darkgoldenrod1")) +
   theme(legend.title=element_blank()) 
 
+
+
 ggsave("graphs_tables/clean_data_plots/StackedConsumerGroup_IslandFacet_lowres.png")
-ggsave("graphs_tables/clean_data_plots/StackedConsumerGroup_IslandFacet.png", dpi = 1200) # must be last plot 
+ggsave("graphs_tables/clean_data_plots/StackedConsumerGroup_IslandFacet_1200dpi.png", dpi = 1200)
+ggsave("graphs_tables/clean_data_plots/StackedConsumerGroup_IslandFacet_300dpi.png", dpi = 300) # must be last plot 
 
 
 
