@@ -6,7 +6,7 @@ write.csv(dp, "data/clean_data/dp.csv")
 selimits <- aes(ymax = All_TotFish + All_TotFishSE, ymin= All_TotFish - All_TotFishSE)
 
 ggplot(consgrp_stack, aes(x = year, y = TotFish, fill = group)) +
-  geom_bar(stat = "identity", col = "black", size = .3) +
+  geom_bar(stat = "identity", col = "black", size = 0) +
   geom_errorbar(selimits, width = 0, size = .25) +
   facet_grid(.~island) +
   theme_bw() + 
@@ -16,7 +16,22 @@ ggplot(consgrp_stack, aes(x = year, y = TotFish, fill = group)) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
   theme(axis.text.x=element_text(angle=45, hjust=1)) +
   theme(legend.position = "bottom") +
-  theme(legend.title=element_blank()) 
+  theme(legend.title=element_blank())+
+  scale_fill_manual(values=c("royalblue", "coral2", "springgreen3",  "darkgoldenrod1"))
+
+
+ggplot(data = subset(consgrp_stack, island == "Baker"), aes(x = year, y = TotFish, fill = group)) +
+  geom_bar(stat = "identity", col = "black", size = 0) +
+  geom_errorbar(selimits, width = 0, size = .25) +
+  theme_bw() + 
+  theme(axis.title.x = element_blank()) +
+  ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
+  ggtitle("Consumer Group Biomass Across the PRIMNM (2010-2015)") +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  theme(legend.position = "bottom") +
+  theme(legend.title=element_blank())+
+  scale_fill_manual(values=c("royalblue", "coral2", "springgreen3",  "darkgoldenrod1"))
 
 ggsave("graphs_tables/StackedConsumerGroup_IslandFacet_1.png")
 ggsave("graphs_tables/StackedConsumerGroup_IslandFacet.png", dpi = 1200)

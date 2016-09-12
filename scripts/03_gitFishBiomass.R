@@ -31,20 +31,103 @@ colorRampPalette(brewer.pal(6,"YlGn"))(6)
 
 # All fish across all pacific islands 
 ggplot(dpall, aes(x = reorder(Mean.ISLAND, -Mean.TotFish), y = Mean.TotFish, fill = Mean.REGION)) +
-  geom_bar(stat = "identity") +
+  geom_bar(stat = "identity", size = 0) +
   geom_errorbar(aes(ymax = Mean.TotFish + PooledSE.TotFish, ymin=Mean.TotFish - PooledSE.TotFish), width = 0, size = .3) + 
   theme_bw() + 
   theme(axis.title.x = element_blank()) + 
-  ggtitle("Total Fish Biomass Across All Pacific Islands") +
+  #ggtitle("Total Fish Biomass Across All Pacific Islands") +
   xlab("Year") + 
   ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
-  theme(axis.text.x=element_text(angle=50, hjust=1))+
-  theme(legend.position = "bottom") +
+  theme(axis.text.x=element_text(angle=90, hjust=1))+
+  theme(legend.position = "top") +
   theme(legend.title=element_blank()) +
-  scale_fill_manual(values=c("#D9F0A3", "#ADDD8E", "#980043" ,  "#78C679", "#31A354", "#006837"))
-ggsave(file = "graphs_tables/TotFishSPC_AllIslands.png")
+  scale_fill_manual(values=c( "#0868ac", "#bae4bc" , "#7bccc4",  "maroon", "#43a2ca"))
+ggsave(file = "graphs_tables/clean_data_plots/TotFishSPC_AllIslands_skinny_toplegend.png")
 
+
+
+############# SIZE CLASSES ##############
+
+levels(dpall$Mean.REGION)[levels(dpall$Mean.REGION)=="Marianas"] <- "Mariana Archipelago"
+levels(dpall$Mean.REGION)[levels(dpall$Mean.REGION)=="MHI"] <- "Main Hawaiian Islands"
+levels(dpall$Mean.REGION)[levels(dpall$Mean.REGION)=="NWHI"] <- "Northwestern Hawaiian Islands"
+levels(dpall$Mean.REGION)[levels(dpall$Mean.REGION)=="PRIAs"] <- "Pacific Remote Islands"
+levels(dpall$Mean.REGION)[levels(dpall$Mean.REGION)=="America Samoa"] <- "American Samoa"
+
+
+levels(dpall$Mean.ISLAND)[levels(dpall$Mean.ISLAND)=="Farallon de Pajaros"] <- "FDP"
+levels(dpall$Mean.ISLAND)[levels(dpall$Mean.ISLAND)=="French Frigate"] <- "FFS"
+levels(dpall$Mean.ISLAND)[levels(dpall$Mean.ISLAND)=="Pearl & Hermes"] <- "P & H"
+levels(dpall$Mean.ISLAND)[levels(dpall$Mean.ISLAND)=="Ofu & Olosega"] <- "OFU"
+
+mytheme <- theme(
+  axis.title.x = element_blank(),
+  axis.text.x = element_blank(),
+  axis.ticks.x = element_blank()
+)
+
+p1 <- ggplot(dpall, aes(x = Mean.ISLAND, y = `Mean.0_20`, fill = Mean.REGION)) +
+  geom_bar(aes(fill = Mean.REGION), position = "dodge", stat = "identity",size = 0) +
+  geom_errorbar(aes(ymax = `Mean.0_20` + `PooledSE.0_20`, ymin=`Mean.0_20` - `PooledSE.0_20`), width = 0, size = .3) + 
+  facet_grid(.~Mean.REGION, scales='free_x')+
+  theme_bw() + 
+  theme(axis.title.y=element_blank()) +
+  #theme(axis.title.x = element_blank()) + 
+  #ggtitle("Total Fish Biomass Across All Pacific Islands") +
+  #ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  #theme(axis.text.x=element_text(angle=90, hjust=1))+
+  theme(legend.position = "none") +
+  theme(legend.title=element_blank()) +
+  scale_fill_manual(values=c( "#0868ac", "#bae4bc" , "#7bccc4",  "maroon", "#43a2ca")) +
+  mytheme
+
+p2 <- ggplot(dpall, aes(x = Mean.ISLAND, y = `Mean.20_50`, fill = Mean.REGION)) +
+  geom_bar(stat = "identity", size = 0) +
+  geom_errorbar(aes(ymax = `Mean.20_50` + `PooledSE.20_50`, ymin=`Mean.20_50` - `PooledSE.20_50`), width = 0, size = .3) + 
+  facet_grid(.~Mean.REGION, scales='free_x')+
+  theme_bw() + 
+  #theme(axis.title.x = element_blank()) + 
+  #ggtitle("Total Fish Biomass Across All Pacific Islands") +
+  ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
+  theme(strip.background = element_blank(), strip.text.x = element_blank()) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  #theme(axis.text.x=element_text(angle=90, hjust=1))+
+  theme(legend.position = "none") +
+  #theme(legend.title=element_blank()) +
+  scale_fill_manual(values=c( "#0868ac", "#bae4bc" , "#7bccc4",  "maroon", "#43a2ca")) +
+  mytheme
+
+p3 <- ggplot(dpall, aes(x = Mean.ISLAND, y = `Mean.50_plus`, fill = Mean.REGION)) +
+  geom_bar(stat = "identity", size = 0) +
+  geom_errorbar(aes(ymax = `Mean.50_plus` + `PooledSE.50_plus`, ymin=`Mean.50_plus` - `PooledSE.50_plus`), width = 0, size = .3) + 
+  facet_grid(.~Mean.REGION, scales='free_x')+
+  theme_bw() + 
+  theme(axis.title.x = element_blank()) + 
+  #ggtitle("Total Fish Biomass Across All Pacific Islands") +
+  #ylab(expression(paste("Fish biomass (g ", m^-2,")"))) + 
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  theme(axis.text.x=element_text(angle=90, hjust=1))+
+  theme(strip.background = element_blank(), strip.text.x = element_blank()) +
+  theme(legend.position = "none") +
+  theme(axis.title.y=element_blank()) +
+  #theme(legend.title=element_blank()) +
+  #scale_x_discrete(limits=c("2","1","0.5")) +
+  #scale_y_continuous(expand = c(0.02,0)) +
+  #theme(axis.title.x = element_text(vjust=-5) , plot.margin = (unit(c(.5, .5, 2, .5), "cm"))) + 
+  scale_fill_manual(values=c( "#0868ac", "#bae4bc" , "#7bccc4",  "maroon", "#43a2ca"))
+
+g1 <- ggplotGrob(p1)
+g2 <- ggplotGrob(p2)
+g3 <- ggplotGrob(p3)
+
+g1$widths <- g2$widths
+g3$widths <- g2$widths
+
+pall <- grid.arrange(g1, g2, g3, nrow=3, as.table = T)
+
+ggsave(pall, file = "graphs_tables/clean_data_plots/SPC_size_classes_all_islands.png")
 
 
 

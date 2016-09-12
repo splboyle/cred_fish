@@ -83,17 +83,19 @@ sp.all <- rbind(sp.p, sp.k, sp.j, sp.jh, sp.b, sp.h, sp.w)
 # Plot all islands showing standard deviation - colors are hard to read here - need to change them at some point
 ggplot(data = sp.all, aes(x = Sites, y = Richness, fill = ISLAND)) +
   geom_line(aes(fill = ISLAND)) + 
-  geom_ribbon(data = sp.all, aes(x = Sites, ymin=(Richness-2*SD),ymax=(Richness+2*SD)),alpha=0.2) + 
+  geom_ribbon(data = sp.all, aes(x = Sites, ymin=(Richness-2*SD),ymax=(Richness+2*SD)),alpha=0.3) + 
   theme_bw() + 
-  ggtitle("Randomized Species Accumulation Curves \n By Island (+/- SD)") + 
+  ggtitle("Randomized Species Accumulation Curves By Island") + 
   scale_fill_discrete(name="Island") +
   #theme(legend.position="bottom") +
-  ylab("Species Richness") + 
+  ylab("Fish Species Richness") + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
-  theme(legend.title=element_blank()) 
+  theme(legend.title=element_blank()) +
+  theme(text = element_text(size = 18))+
+  theme(legend.position=c(.85,0.25))
 
 # Save plot to folder in GitHub
-ggsave("graphs_tables/PRIMSpecAccum_SD.jpg")
+ggsave("graphs_tables/PRIMSpecAccum_SD_largetext.jpg")
 
 
 
